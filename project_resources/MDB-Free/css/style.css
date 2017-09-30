@@ -1,0 +1,107 @@
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
+
+.view {
+    background: url("/images/space.jpeg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.view_profile_user{
+    background-color: #9e9e9e;
+}
+
+#front_logo{
+    padding-bottom: 0;
+    padding-top: 0;
+    
+}
+
+.front_page{
+    color: #FFFFFF !important;
+}
+
+#editor_body {
+  padding-top: 10%;
+}
+@media (max-width: 979px) {
+  #editor_body {
+    padding-top: 10%;
+  }
+}
+
+#editable{
+    float: left !important;
+    width: 50% !important;
+}
+
+ /* The console container element */
+    #console {
+      position: absolute;
+      width: 25% !important;
+      height: 50% !important;
+      background-color:black;
+      float: left !important;
+    }
+    /* The inner console element. */
+    .jqconsole {
+        padding: 10px;
+    }
+    /* The cursor. */
+    .jqconsole-cursor {
+        background-color: gray;
+    }
+    /* The cursor color when the console looses focus. */
+    .jqconsole-blurred .jqconsole-cursor {
+        background-color: #666;
+    }
+    /* The current prompt text color */
+    .jqconsole-prompt {
+        color: #0d0;
+    }
+    /* The command history */
+    .jqconsole-old-prompt {
+        color: #0b0;
+        font-weight: normal;
+    }
+    /* The text color when in input mode. */
+    .jqconsole-input {
+        color: #dd0;
+    }
+    /* Previously entered input. */
+    .jqconsole-old-input {
+        color: #bb0;
+        font-weight: normal;
+    }
+    /* The text color of the output. */
+    .jqconsole-output {
+        color: black;
+    }
+    
+#left_content{
+    float:left;
+    vertical-align: middle;
+}
+
+#right_content{
+    float:left;
+    vertical-align: middle;
+}
+
+#clear{
+    clear: both;
+}
+
+.login_form{
+    background-color: #ffffff;
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 20px;
+}

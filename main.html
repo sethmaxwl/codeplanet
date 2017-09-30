@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>codeplanet</title>
+    <link rel="icon" href="/images/planet.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="/project_resources/MDB-Free/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/project_resources/MDB-Free/css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="/project_resources/MDB-Free/css/style.css" rel="stylesheet">
+    <!--Spinning Planet Styles-->
+    <style>
+        @-webkit-keyframes planet-rotation {
+            from {
+                background-position: 0% 0%;
+            }
+            to {
+                background-position: -200% 0%;
+            }
+        }
+        @keyframes planet-rotation {
+            from {
+                background-position: 0% 0%;
+            }
+            to {
+                background-position: -200% 0%;
+            }
+        }
+        body {
+            background-color: #101010;
+        }
+        .container1 {
+            padding: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .planet-image {
+            width: 25vw;
+            height: 25vw;
+            max-width: 256px;
+            max-height: 256px;
+            border-radius: 50%;
+            position: relative;
+            background: #303030 url('/images/night_sky.jpg') repeat-x center center;
+            background-size: cover;
+            -webkit-animation: planet-rotation 50s linear infinite;
+        }
+        .planet-image:after {
+            position: absolute;
+            content: '';
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            height: 100%;
+            border-radius: 50%;
+            background-image:
+                -webkit-radial-gradient(16% 50%, 30% 50%, rgba(255,240,230,.001), transparent),
+                -webkit-linear-gradient(left, rgba(255,240,220,0.1) 12%, rgba(255,240,220,0) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,1) 100%);
+            background-image:
+                -webkit-radial-gradient(16% 50%, 30% 50%, rgba(255,240,230,.001), transparent),
+                -moz-linear-gradient(left, rgba(255,240,220,0.1) 12%, rgba(255,240,220,0) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,1) 100%);
+            background-image:
+                -webkit-radial-gradient(16% 50%, 30% 50%, rgba(255,240,230,.001), transparent),
+                -o-linear-gradient(left, rgba(255,240,220,0.1) 12%, rgba(255,240,220,0) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,1) 100%);
+            background-image:
+                -webkit-radial-gradient(16% 50%, 30% 50%, rgba(255,240,230,.001), transparent),
+                linear-gradient(to right, rgba(255,240,220,0.1) 12%, rgba(255,240,220,0) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,1) 100%);;
+                linear-gradient(to left, rgba(0,0,0,0.1) 12%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,1) 100%);
+            box-shadow: inset 10px 0 30px rgba(255,240,220,0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!--Nav bar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c3840">
+        <!--codeplanet logo and text-->
+        <a class="navbar-brand" href="main.html"><img src="/images/planet.png" style="width: 50px; height: auto;">codeplanet</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <!--Code editor button-->
+                <li class="nav-item">
+                    <a class="nav-link" href="/editor_page.html">Code Editor</a>
+                </li>
+                </li>
+            </ul>
+            <!--Micah look here-->
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                        <!--Twitter-->
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" target="_blank" href="https://twitter.com/codeplanet1"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <!--Google+-->
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" target="_blank" href="https://plus.google.com/u/3/109087039167043596848"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                        <!--Log in page-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login.php">Log in / Sign up<span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+        </div>
+        </nav>
+        <div class="view">
+            <div class="full-bg-img flex-center">
+                <ul>
+                    <div class="front_page">
+                    <!--Front logo-->
+                    <li>
+                        <div class="container1">
+                            <div class="planet-image"></div>
+                        </div>
+                    </li>
+                    <!--codeplanet title-->
+                    <li>
+                        <h1 class="h1-responsive">codeplanet</h1>
+                    </li>
+                    <li>
+                        <p>The programming social media platform</p>
+                    </li>
+                    </div>
+                    <li>
+                        <!--Sign up button-->
+                        <a href="login.php" class="btn btn-primary btn-lg purple btn-round">Sign up</a>
+                        <!--Learn more button-->
+                        <a href="profile_user.html" class="btn btn-default btn-lg deep-purple btn-round">Profile Page</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main>
+
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer>
+
+    </footer>
+    <!--Footer-->
+    <!-- Start your project here-->
+    <!-- /Start your project here-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="/project_resources/MDB-Free/js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/project_resources/MDB-Free/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/project_resources/MDB-Free/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/project_resources/MDB-Free/js/mdb.min.js"></script>
+</body>
+
+</html>

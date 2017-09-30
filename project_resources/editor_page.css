@@ -1,0 +1,67 @@
+.jumbotron{
+    color: #00140A !important;
+    background-color: #00140A !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+#jumbotron_title{
+    color: #FFFFFF; 
+    text-align: center; 
+    margin-top: 0px;
+    font-family: "Space Age";
+}
+
+@font-face {
+    font-family:"Space Age";
+    src: local("/project_resourecs/font_files/space_age/space_age.eot") format("eot"), local("/project_resourecs/font_files/space_age/space_age.woff") format("woff"),local("/project_resourecs/font_files/space_age/space_age.ttf") format("truetype"), local("/project_resourecs/font_files/space_age/space_age.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+#editable{
+    float: left !important;
+    width: 50% !important;
+}
+
+ /* The console container element */
+    #console {
+      position: absolute;
+      width: 25% !important;
+      height: 50% !important;
+      background-color:black;
+      float: left !important;
+    }
+    /* The inner console element. */
+    .jqconsole {
+        padding: 10px;
+    }
+    /* The cursor. */
+    .jqconsole-cursor {
+        background-color: gray;
+    }
+    /* The cursor color when the console looses focus. */
+    .jqconsole-blurred .jqconsole-cursor {
+        background-color: #666;
+    }
+    /* The current prompt text color */
+    .jqconsole-prompt {
+        color: #0d0;
+    }
+    /* The command history */
+    .jqconsole-old-prompt {
+        color: #0b0;
+        font-weight: normal;
+    }
+    /* The text color when in input mode. */
+    .jqconsole-input {
+        color: #dd0;
+    }
+    /* Previously entered input. */
+    .jqconsole-old-input {
+        color: #bb0;
+        font-weight: normal;
+    }
+    /* The text color of the output. */
+    .jqconsole-output {
+        color: black;
+    }
