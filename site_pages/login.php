@@ -1,4 +1,7 @@
+<html lang="en">
+
 <?php 
+include('navbar.php');
 
 $servername = "localhost";
 $username = "westv1387";
@@ -15,7 +18,7 @@ if ($conn->connect_error) {
 ?>
 
 
-<html lang="en">
+
 
 <head>
     <meta charset="utf-8">
@@ -35,38 +38,6 @@ if ($conn->connect_error) {
 <body>
     <!--Main Navigation-->
     <header>
-        <!--Nav bar-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c3840">
-        
-        <!--codeplanet logo and text-->
-        <a class="navbar-brand" href="main.html"><img src="/images/planet.png" style="width: 50px; height: auto;">codeplanet</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <!--Code editor button-->
-                    <a class="nav-link" href="/editor_page.html">Code Editor</a>
-                </li>
-                </li>
-            </ul>
-            <!--Micah look here 8-->
-            <ul class="navbar-nav ml-auto nav-flex-icons">
-                       <!--Twitter-->
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" target="_blank" href="https://twitter.com/codeplanet1"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <!--Google+-->
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" target="_blank" href="https://plus.google.com/u/3/109087039167043596848"><i class="fa fa-google-plus"></i></a>
-                        </li>
-                        <!--Log in page-->
-                        <li class="nav-item active">
-                            <a class="nav-link" href="">Log in / Sign up<span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-        </div>
-        </nav>
             <div class="view">
             <div class="full-bg-img flex-center">
                 <div class="col-sm-3">
@@ -87,6 +58,7 @@ if ($conn->connect_error) {
                 </div>
             </div>
             <div class="col-sm-1"></div>
+            <!--sign up-->
             <div class="col-sm-3">
                 <div class="container" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
                     <form class="form-signin">
@@ -101,6 +73,7 @@ if ($conn->connect_error) {
                             </label>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Get Started</button>
+                       
                     </form>
                 </div>
             </div>

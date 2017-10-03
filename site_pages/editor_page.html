@@ -31,10 +31,20 @@
         <script type="text/javascript" src="/project_resources/MDB-Free/js/bootstrap.min.js"></script>
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="/project_resources/MDB-Free/js/mdb.min.js"></script>
-        <script type="text/javascript">
-            $('#downloadLink').click(function(){
-                downloadInnerHtml(fileName, 'main','text/html');
-            });
+        <script>
+            var editableCodeMirror;
+            window.onload = function(editableCodeMirror){
+                editableCodeMirror = CodeMirror.fromTextArea(document.getElementById('codesnippet_editable'), {
+                    mode: "javascript",
+                    theme: "night",
+                    lineNumbers: true
+                });
+                return(editableCodeMirror);
+            }
+            function save_stuff(editableCodeMirror){
+                var myCodeMirror = CodeMirror.fromTextArea('codesnippet_editable');
+                console.log(text);
+            }
         </script>
     </head>
     <div id="editor_body">
@@ -42,7 +52,7 @@
         <header>
         <!--Nav bar-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c3840">
-        <a class="navbar-brand" href="main.html"><img src="/images/planet.png" style="width: 50px; height: auto;">codeplanet</a>
+        <a class="navbar-brand" href="/site_pages/main.html"><img src="/images/planet.png" style="width: 50px; height: auto;">codeplanet</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -65,26 +75,21 @@
                         </li>
                         <!--Log in page-->
                         <li class="nav-item">
-                            <a class="nav-link" href="/login.php">Log in / Sign up<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/site_pages/login.php">Log in / Sign up<span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
         </div>
         </nav>
+        <div style="width: 75%; margin: auto;">
         <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable">//Enter code here
-</textarea>
+        </textarea>
         </div>
         <!--CodeMirror editable code window-->
         <div id="editable">
-        <script>
-            window.onload = function () {
-                var editableCodeMirror = CodeMirror.fromTextArea(document.getElementById('codesnippet_editable'), {
-                    mode: "javascript",
-                    theme: "night",
-                    lineNumbers: true
-                });
-            };
-        </script>
-        <a href="" id="download_content">Click to download</a>
+        </div>
+        <div style="text-align:center;margin:auto;">
+        <button type="button" value="save" id="save" onClick="save_stuff();">Save</button>
+        </div>
         </div>
             </header>
     </body>
