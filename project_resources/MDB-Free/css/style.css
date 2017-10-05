@@ -1,7 +1,8 @@
 html,
 body,
 header,
-.view {
+.view,
+.view1 {
     height: 100%;
 }
 
@@ -12,6 +13,15 @@ header,
     -o-background-size: cover;
     background-size: cover;
 }
+/*Change the background url of .view1 to update the background of about.html*/
+.view1 {
+    background: url("/images/filler.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 
 .view_profile_user{
     background-color: #9e9e9e;
