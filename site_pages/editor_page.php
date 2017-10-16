@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <?php include('navbar.php'); ?>
     <head>
         <title>Code Editor - codeplanet</title>
         <meta charset="utf-8">
@@ -50,36 +51,6 @@
     <div id="editor_body">
     <body>
         <header>
-        <!--Nav bar-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c3840">
-        <a class="navbar-brand" href="/site_pages/main.html"><img src="/images/planet.png" style="width: 50px; height: auto;">codeplanet</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <!--Code editor button-->
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Code Editor<span class="sr-only">(current)</span></a>
-                </li>
-                </li>
-            </ul>
-            <!--Micah look here-->
-            <ul class="navbar-nav ml-auto nav-flex-icons">
-                        <!--Twitter-->
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" target="_blank" href="https://twitter.com/codeplanet1"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <!--Google+-->
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" target="_blank" href="https://plus.google.com/u/3/109087039167043596848"><i class="fa fa-google-plus"></i></a>
-                        </li>
-                        <!--Log in page-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="/site_pages/login.php">Log in / Sign up<span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-        </div>
-        </nav>
         <div style="width: 75%; margin: auto;">
         <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable">//Enter code here
         </textarea>

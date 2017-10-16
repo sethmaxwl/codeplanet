@@ -34,16 +34,16 @@ if ($conn->connect_error) {
     <link href="/project_resources/MDB-Free/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="/project_resources/MDB-Free/css/style.css" rel="stylesheet">
+    <link href="/project_resources/css/animate.css" rel="stylesheet">
 </head>
 <body>
-    <!--Main Navigation-->
     <header>
             <div class="view">
             <div class="full-bg-img flex-center">
                 <div class="col-sm-3">
-                <div class="container" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
+                <div class="container animated slideInUp" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
                     <form class="form-signin">
-                        <h2 class="form-signin-heading" style="text-align: center; font-size: 150%;">Please Sign In...</h2>
+                        <h2 class="form-signin-heading" style="text-align: center; font-size: 140%;">Please Sign In...</h2>
                         <label for="inputEmail" class="sr-only">Email address</label>
                         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
                         <label for="inputPassword" class="sr-only">Password</label>
@@ -53,16 +53,16 @@ if ($conn->connect_error) {
                                 <input type="checkbox" value="remember-me"> Remember me
                             </label>
                         </div>
-                        <button class="btn btn-lg btn-success btn-block" type="submit">Start Coding</button>
+                        <button class="btn btn-lg btn-success btn-block" type="submit" style="font-size: 12px;">Start Coding</button>
                     </form>
                 </div>
             </div>
             <div class="col-sm-1"></div>
             <!--sign up-->
             <div class="col-sm-3">
-                <div class="container" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
+                <div class="container animated slideInUp" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
                     <form class="form-signin">
-                        <h2 class="form-signin-heading" style="text-align: center; font-size: 150%;">...or Sign Up!</h2>
+                        <h2 class="form-signin-heading" style="text-align: center; font-size: 140%;">...or Sign Up!</h2>
                         <label for="inputEmail" class="sr-only">Email address</label>
                         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
                         <label for="inputPassword" class="sr-only">Password</label>
@@ -72,7 +72,7 @@ if ($conn->connect_error) {
                                 <input type="checkbox" value="remember-me" style="visibility: hidden;">
                             </label>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Get Started</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" style="font-size: 12px;">Get Started</button>
                        
                     </form>
                 </div>

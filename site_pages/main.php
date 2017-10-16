@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include('navbar.php'); ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,13 +36,6 @@
         }
         body {
             background-color: #101010;
-        }
-        .container {
-            padding: 64px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 15%;
         }
         .planet-image {
             width: 25vw;
@@ -82,80 +75,87 @@
         .animated{
             animation-duration: 2s !important;
         }
+        @keyframes particleAnimation{
+            from {
+                left: -100px;
+            }
+            to {
+                left: calc( 100% + 100px );
+            }
+        }
+
+        .p{
+            position:fixed;
+            left:0px;
+            top:100px;
+            width:1px;
+            height:1px;
+            color: white;
+            position:fixed;
+            animation-name:particleAnimation;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        .p::before{
+            position:absolute;
+            display:block;
+            content:"";
+            width:100px;
+            right:1px;
+            top:0px;
+            height:1px;
+            background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%); 
+        }  
+        .p-1{
+            animation-duration:10s;
+            top:20%;
+        }
+        .p-2{
+            animation-duration:5s;
+            top:60%;
+        }
+        .p-3{
+            animation-duration:20s;
+            top:90%;
+        }
     </style>
 </head>
-
 <body>
     <!--Main Navigation-->
     <header>
-        <!--Nav bar-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c3840">
-            <a class="navbar-brand" href="main.html"><img src="/images/planet.png" style="width: 50px; height: auto;">codeplanet</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/site_pages/editor_page.html">Code Editor</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto nav-flex-icons">
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect waves-light" target="_blank" href="https://twitter.com/codeplanet1"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect waves-light" target="_blank" href="https://plus.google.com/u/3/109087039167043596848"><i class="fa fa-google-plus"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/site_pages/login.php">Log in / Sign up<span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
         <div class="view">
             <div class="full-bg-img flex-center">
                 <ul>
                     <div class="front_page">
                         <!--spinning planet-->
-                        <li>
-                            <div class="container animated zoomIn">
-                                <div class="planet-image"></div>
+                        <div class="p p-1"></div>
+                        <div class="p p-2"></div>
+                        <div class="p p-3"></div>
+                        <li style="margin-bottom: 0;">
+                            <div class="animated zoomIn">
+                                <div style="padding: 16px; margin-top: 10%; display: flex; justify-content: center; align-items: center; padding-top: 15%;">
+                                    <div class="planet-image"></div>
+                                </div>
                             </div>
                         </li>
                         <!--codeplanet title-->
                         <li>
-                            <h1 class="h1-responsive">codeplanet</h1>
+                            <h2 class="h2-responsive">codeplanet</h1>
                         </li>
                         <li>
                             <p>The programming social media platform</p>
                         </li>
-                        </div>
                         <li>
                             <!--Sign up button-->
                             <a href="/site_pages/login.php" class="btn purple">Sign up</a>
-                            <!--Learn more button-->
-                            <a href="/site_pages/profile_user.html" class="btn  deep-purple">Profile Page</a>
+                            <a href="/site_pages/profile_user.php" class="btn deep-purple">Profile Page</a>
                         </li>
+                        </div>
                     </div>
                 </ul>
             </div>
         </div>
     </header>
-    <!--Main Navigation-->
-
-    <!--Main layout-->
-    <main>
-
-    </main>
-    <!--Main layout-->
-
-    <!--Footer-->
-    <footer>
-
-    </footer>
-    <!--Footer-->
-    <!-- Start your project here-->
-    <!-- /Start your project here-->
-
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="/project_resources/MDB-Free/js/jquery-3.1.1.min.js"></script>

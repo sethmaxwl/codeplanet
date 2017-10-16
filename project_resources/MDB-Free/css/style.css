@@ -7,15 +7,15 @@ header,
 }
 
 .view {
-    background: url("/images/space.jpeg")no-repeat center center fixed;
+    background: url("/images/deep_space.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-/*Change the background url of .view1 to update the background of about.html*/
+
 .view1 {
-    background: url("/images/filler.jpg")no-repeat center center fixed;
+    background: url("/images/abtbckgrd.png")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -124,3 +124,4 @@ header,
     border-style: solid;
     padding: 20px;
 }
+
