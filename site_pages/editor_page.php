@@ -42,9 +42,19 @@
                 });
                 return(editableCodeMirror);
             }
-            function save_stuff(editableCodeMirror){
-                var myCodeMirror = CodeMirror.fromTextArea('codesnippet_editable');
-                console.log(text);
+            function getValue(lineSep) {
+                var lines = getLines(this, this.first, this.first + this.size)
+                if (lineSep === false) { return lines }
+                return lines.join(lineSep || this.lineSeparator())
+            }
+            function getLines(doc, from, to) {
+                var out = []
+                doc.iter(from, to, function (line) { out.push(line.text) }) // iter aborts when callback returns truthy value
+                return out
+            }
+            function save_stuff(){
+                var code = getValue('\n');
+                console.log(code);
             }
         </script>
     </head>
@@ -52,8 +62,7 @@
     <body>
         <header>
         <div style="width: 75%; margin: auto;">
-        <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable">//Enter code here
-        </textarea>
+        <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable" style="width: 50%;">//Enter code here</textarea>
         </div>
         <!--CodeMirror editable code window-->
         <div id="editable">
