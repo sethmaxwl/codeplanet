@@ -3,17 +3,47 @@
 <?php 
 include('navbar.php');
 
-$servername = "localhost";
-$username = "westv1387";
-$password = "";
-$dbname = "CodeTN";
+if (!empty($_POST["inputEmail"])){
+    $servername = "localhost";
+    $username = "westv1387";
+    $password = "";
+    $dbname = "CodeTN";
+    
+    //Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    //Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $username = $_POST ["inputEmail"];
+    $pass = password_hash($_POST["password"], PASSWORD_BCRYPT, ["cost"=>10]);
+    
+    $sql = $con->prepare("INSERT INTO User (username, password) VALUES (?,?);");
+    $sql->bind_param("ss",$username, $pass);
+    $sql->execute();
+    $conn->close();
+}
 
-//Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-//Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+if (!empty($_POST["loginEmail"])){
+     $servername = "localhost";
+    $username = "westv1387";
+    $password = "";
+    $dbname = "CodeTN";
+    
+    //Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    //Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $username = $_POST["loginEmail"]
+    $sql = $conn->prepare("SELECT UserID FROM User WHERE username = ?;");
+    $sql->bind_param("s", $username);
+    
+    $conn->close();
+}
+    
 
 ?>
 
@@ -44,15 +74,10 @@ if ($conn->connect_error) {
                 <div class="container animated slideInUp" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
                     <form class="form-signin">
                         <h2 class="form-signin-heading" style="text-align: center; font-size: 140%;">Please Sign In...</h2>
-                        <label for="inputEmail" class="sr-only">Email address</label>
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-                        <label for="inputPassword" class="sr-only">Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="remember-me"> Remember me
-                            </label>
-                        </div>
+                        <label for="loginEmail" class="sr-only">Email address</label>
+                        <input type="email" id="loginEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                        <label for="loginPassword" class="sr-only">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Password" required="">
                         <button class="btn btn-lg btn-success btn-block" type="submit" style="font-size: 12px;">Start Coding</button>
                     </form>
                 </div>
@@ -67,11 +92,6 @@ if ($conn->connect_error) {
                         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
                         <label for="inputPassword" class="sr-only">Password</label>
                         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                       <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="remember-me" style="visibility: hidden;">
-                            </label>
-                        </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit" style="font-size: 12px;">Get Started</button>
                        
                     </form>
