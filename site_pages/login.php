@@ -18,14 +18,14 @@ if (!empty($_POST["inputEmail"])){
     $username = $_POST ["inputEmail"];
     $pass = password_hash($_POST["password"], PASSWORD_BCRYPT, ["cost"=>10]);
     
-    $sql = $con->prepare("INSERT INTO User (username, password) VALUES (?,?);");
+    $sql = $conn->prepare("INSERT INTO User (username, password) VALUES (?,?);");
     $sql->bind_param("ss",$username, $pass);
     $sql->execute();
     $conn->close();
 }
 
 if (!empty($_POST["loginEmail"])){
-     $servername = "localhost";
+    $servername = "localhost";
     $username = "westv1387";
     $password = "";
     $dbname = "CodeTN";
@@ -37,10 +37,11 @@ if (!empty($_POST["loginEmail"])){
         die("Connection failed: " . $conn->connect_error);
     }
     
-    $username = $_POST["loginEmail"]
+    $username = $_POST["loginEmail"];
     $sql = $conn->prepare("SELECT UserID FROM User WHERE username = ?;");
     $sql->bind_param("s", $username);
     
+    $sql->execute();
     $conn->close();
 }
     

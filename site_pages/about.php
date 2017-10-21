@@ -150,7 +150,7 @@
                             <hr>
                             <!--Text-->
                             <div style="text-align: center;">
-                                <p class="card-text">I am a senior at Hardin Valley Academy. I did the web design for this application.</p>
+                                <p class="card-text">I am a senior at Hardin Valley Academy. I designed the front-end of this application and built the code editor.</p>
                             </div>
                         </div>
 

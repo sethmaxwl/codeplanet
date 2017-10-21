@@ -16,29 +16,72 @@
     <!-- Your custom styles (optional) -->
     <link href="/project_resources/MDB-Free/css/style.css" rel="stylesheet">
     <link href="/project_resources/css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                
+            } else { 
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: Roboto,sans-serif !important;
+        }
+        .w3-button{
+            background-color: #6e48f8 !important;
+            color: #FFFFFF !important;
+        }
+        
+        .w3-button:hover{
+            background-color: #4717F6 !important;
+            color: #FFFFFF !important;
+        }
+        .w3-show{
+            background-color: #E7DFDD !important;
+            color: #565656 !important;
+        }
+        p{
+            vertical-align: middle;
+        }
+        
+    </style>
   </head>
   <body>
   <header class="animated fadeIn">
         <div class="container">
             <div class="divider-new pt-5">
-                <h2 class="h2-responsive wow fadeIn" style="animation-name: none; visibility: visible;">WHO WE ARE AND WHAT WE DO</h2>
+                <h2 class="h2-responsive wow" style="animation-name: none; visibility: visible;">Frequently Asked Questions</h2>
             </div>
-            <!--Section: About-->
-            <section id="about" class="text-center wow fadeIn" data-wow-delay="0.2s" style="animation-name: none; visibility: visible;">
-                <p style="margin-top: 10%;">The Arby's brand purpose is to "inspire smiles through delicious experiences." Arby's delivers on its purpose by celebrating the art of Meatcraft with a variety of high-quality proteins and innovative, crave-able sides, such as Curly Fries and Jamocha shakes. Arby's Fast Crafted restaurant services feature a unique blend of quick-serve speed combined with the quality and made-for-you care of fast casual.  Arby's Restaurant Group, Inc. is the franchisor of the Arby's Brand and is headquartered in Atlanta, Ga.</p>
-                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQnH2G_chALJZO4imUTP47uqyiIyF-ebFLqqagC7i3MiEaKIdKM" class="img-fluid" style="width: 25%; height: auto;">
-                <div style="position:relative;width:267px;height:25px;overflow:hidden;">
-        <div style="position:absolute;top:-276px;left:-5px">
-            <iframe width="0" height="0" src="https://www.youtube.com/embed/V5mfZrVAg6Y?autoplay=1&cc_load_policy=1" frameborder="0" allowfullscreen></iframe>
+            <h3 class="h3-responsive wow" style="animation-name: none; visibility: visible; text-align: center;">Click on a question for an answer</h3>
         </div>
-    </div>
-            </section>
-            <!--Section: About-->
+            
+            <!--Skeleton FAQ entry
+            
+            <button onclick="myFunction('DemoX')" class="w3-button w3-block w3-left-align">Q.</button>
+            <div id="DemoX" class="w3-container w3-hide">
+                <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible;"><b>Q.</b></h4>
+                <p></p>
+                </div>
+            
+            -->
+        <div style="width: 85%; margin: auto;">
+            <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-left-align">What is codeplanet?</button>
+            <div id="Demo1" class="w3-container w3-hide">
+                <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible;"><b>Q. What is codeplanet?</b></h4>
+                <p>A. The codeplanet platform is designed to allow users to develop JavaScript programs and share them with a community of people. This community-based approach to programming allows users to collect value feedback from others in the form of upvotes and comments, helping programmers to learn from each other and enhance their programming skills.</p>
+                </div>
+            <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-left-align">How can I get an output from the JavaScript console?</button>
+            <div id="Demo2" class="w3-container w3-hide">
+                <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible;"><b>Q. How can I get an output from the JavaScript console?</b></h4>
+                <p>A. To get an output, you must declare a function that returns the value of whatever you want the console to display. A few key notes to remember when doing this is the 500 character limit on outputs. Also, using the word "Infinity" anywhere in the input is prohibited, as infinite loops aren't too great for codeplanet.</p>
+            </div>
         </div>
     </header>
-
-    <!-- Main container-->
-    <!--/ Main container-->
 
     <!-- SCRIPTS -->
 
