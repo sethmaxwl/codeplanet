@@ -44,46 +44,71 @@
                 $('#result').val(console_log);
             }
             function run_stuff(){
-                if(editableCodeMirror.getValue().length > 0){
-                    var input = editableCodeMirror.getValue('\n');
-                    if(input.includes('Infinity') == false){
-                        var output = eval(input);
-                        if(output.toString().length <= 500){
-                            console_log += "\nConsole:~$ "  + output;
-                            $('#result').val(console_log);
+                var too_big = false;
+                try {
+                    if(editableCodeMirror.getValue().length >= 0){
+                        var input = editableCodeMirror.getValue('\n');
+                        if(input.includes('Infinity') == false){
+                            var output = eval(input) + " ";
+                            
+                            if(output.toString().length <= 1000){
+                                //Decides if window is redirecting and displays a special message if it is
+                                window['redirecting'] = false;
+                                window.onbeforeunload = function(){
+                                    window['redirecting'] = true;
+                                    return '';
+                                };
+                                if(redirecting == false){
+                                    console_log += "\nConsole:~$ " +  output;
+                                    $('#result').val(console_log);
+                                }
+                                setInterval(function(){
+                                    if(redirecting){
+                                        setTimeout(function(){
+                                            console_log += "\nConsole:~$ There was an attempt to redirect to "  +  output;
+                                            $('#result').val(console_log);
+                                        }, 0);
+                                    }
+                                    window['redirecting'] = false;
+                                }, 100);
+                                window.removeEventListener("beforeunload", function(){
+                                    return null;
+                                });
+                            }else if(output.toString().length > 1000){
+                                window['output'];
+                                throw 'JustUsError: Please do not output anything greater than 1000 characters. K thanks.';
+                            }
                         }else{
-                            console_log += '\nConsole:~$ The output size is too large.';
-                            $('#result').val(console_log);   
-                        }
-                    }else{
-                        console_log += '\nConsole:~$ Please refrain from using the word \'Infinity.\' Infinite loops are bad.';
-                        $('#result').val(console_log); 
+                            window['output'];
+                            throw 'JustUsError: Please refrain from using the word \'Infinity.\' Infinite loops are bad.';
+                        }    
                     }
-                }
-
-            }
-            function clear_stuff(){
-                if(editableCodeMirror.getValue().length > 0){
-                    editableCodeMirror.setValue('');
-                    console_log = "Console:~$ "
+                } catch(err){
+                    console_log += '\nConsole:~$ ' + err.name + ': ' + err.message;
                     $('#result').val(console_log);
                 }
+                var textarea = document.getElementById('result');
+                textarea.scrollTop = textarea.scrollHeight;
+            }
+            
+            function clear_stuff(){
+                editableCodeMirror.setValue('');
+                console_log = "Console:~$ Welcome to the codeplanet code editor";
+                $('#result').val(console_log);
             }
         </script>
     </head>
-    <div id="editor_body">
-        <body>
-            <header>
-                <div class="container animated fadeIn">
-                <div class="row">
+        <body style="padding-top: 10%; overflow-x:hidden;">
+                <div class="row animated fadeIn" style="padding-left: 6%; padding-right: 6%;">
                     <div class="col-lg">
-                        <div style="width: 100%; margin: auto;">
-                            <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable" style="width: 100%;">//Have a function return a value to get a text output</textarea>
+                        <div style="width: 100%; height: 100%; margin: auto;">
+                            <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable" style="width: 100%; height: 5%;">//Have a function return a value to get a text output</textarea>
                         </div>
                         <!--CodeMirror editable code window-->
                         <div id="editable"></div>
                     </div>
                     <div class="col-lg" style="vertical-align: middle; margin-top: 2%;">
+                        <div style="height: 100%">
                         <div class="row">
                             <div class="btn-group" role="group" style="margin: auto;">
                                 <button role="button" class="btn deep-purple btn-md" id="run_btn" onClick="run_stuff();"><span><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Run</span></button>
@@ -91,12 +116,10 @@
                                 <button role="button" class="btn deep-purple btn-md disabled" id="save_btn" onClick="save_stuff();"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button>
                             </div>
                         </div>
-                        <div class="row">
-                            <textarea rows="4" cols="25" style="margin-top: 5%; margin-bottom: 5%; width: 100%; height: 100%;overflow: auto;outline: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,Lucida Console,monospace;font-size:12px;background-color: #000000;color: #00ff00;" id="result" onkeydown="return false;" onClick="return false;"></textarea>
+                        <div class="row" style="height: inherit;">
+                            <textarea rows="4" cols="25" style="margin-top: 5%; margin-bottom: 5%; width: 100%; height: 77%; overflow: auto;outline: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,Lucida Console,monospace;font-size:12px;background-color: #000000;color: #00ff00;" id="result" onkeydown="return false;" onClick="return false;"></textarea>
+                        </div>
                         </div>
                     </div>
-                </div>
-            </header>
         </body>
-    </div>
 </html>

@@ -1,12 +1,10 @@
 <?php 
 session_start();
 $name = $_SESSION['username'];
-
 if ($name === Null) {
   echo '
-  <link rel="icon" href="/images/planet.ico" type="image/x-icon">
    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #342B46">
-    <a class="navbar-brand" href="main.php"><img src="/images/mdearth.png" style="width: 25px; height: auto; margin-right: 5%;">codeplanet</a>
+    <a class="navbar-brand" href="main.php"><img src="/images/mdearth.png" style="width: 25px; height: auto; margin-right: 5%; vertical-align: middle;">codeplanet</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -98,6 +96,6 @@ if ($name === Null) {
 
   body::-webkit-scrollbar-corner {
     background: transparent;
-  }    
+  }
 </style>
 <link rel="icon" href="/images/planet.ico" type="image/x-icon">
