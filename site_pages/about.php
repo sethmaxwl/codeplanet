@@ -125,7 +125,7 @@
                             <hr>
                             <!--Text-->
                             <div style="text-align: center;">
-                                <p class="card-text">I worked with Javascript and the design.</p>
+                                <p class="card-text">I worked with Javascript and helped with the design.</p>
                             </div>
                         </div>
 

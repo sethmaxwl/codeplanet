@@ -12,6 +12,9 @@ if ($name === Null) {
           <a class="nav-link" href="/site_pages/editor_page.php">Code Editor</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/site_pages/community.php">Community</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/site_pages/about.php">About Us</a>
         </li>
         <li class="nav-item">

@@ -16,7 +16,7 @@ if (!empty($_POST["inputEmail"])){
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    $username = $_POST ["inputEmail"];
+    $username = $_POST["inputEmail"];
     $pass = password_hash($_POST["inputPassword"], PASSWORD_BCRYPT, ["cost"=>10]);
     
     
@@ -27,26 +27,26 @@ if (!empty($_POST["inputEmail"])){
 }
 
 //this part needs fixing later
-// if (!empty($_POST["loginEmail"])){
-//     $servername = "localhost";
-//     $username = "westv1387";
-//     $password = "";
-//     $dbname = "CodeTN";
+if (!empty($_POST["loginEmail"])){
+    $servername = "localhost";
+    $username = "westv1387";
+    $password = "";
+    $dbname = "CodeTN";
     
-//     //Create connection
-//     $conn = new mysqli($servername, $username, $password, $dbname);
-//     //Check connection
-//     if ($conn->connect_error) {
-//         die("Connection failed: " . $conn->connect_error);
-//     }
+    //Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    //Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
     
-//     $username = $_POST["loginEmail"];
-//     $sql = $conn->prepare("SELECT UserID FROM User WHERE username = ?;");
-//     $sql->bind_param("s", $username);
+    $username = $_POST["loginEmail"];
+    $sql = $conn->prepare("SELECT UserID FROM User WHERE username = ?;");
+    $sql->bind_param("s", $username);
     
-//     $sql->execute();
-//     $conn->close();
-// }
+    $sql->execute();
+    $conn->close();
+}
 ?>
 
     <head>
@@ -98,6 +98,7 @@ if (!empty($_POST["inputEmail"])){
                 </div>
                 </div>
                 </div>
+        </header>
         <!--Main Navigation-->
     
         <!--Main layout-->

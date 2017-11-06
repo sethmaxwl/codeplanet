@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <?php include('navbar.php'); ?>
     <head>
         <title>Code Editor - codeplanet</title>
@@ -17,13 +17,28 @@
         <link href="/project_resources/MDB-Free/css/style.css" rel="stylesheet">
         <!--Codemirror resources-->
         <link rel="stylesheet" href="/project_resources/codemirror.css">
-        <link rel="stylesheet" href="/project_resources/night.css">
         <script src="/project_resources/codemirror.js"></script>
         <script src="/project_resources/matchbrackets.js"></script>
         <script src="/project_resources/javascript.js"></script>
         <script src="/project_resources/xml.js"></script>
         <script src="/project_resources/solemirror.js"></script>
-        <link rel="stylesheet" href="/project_resources/editor_page.css">
+        <script src="/project_resources/MDB-Free/js/matchbrackets.js"></script>
+        <script src="/project_resources/active-line.js"></script>
+        <script src="/project_resources/closebrackets.js"></script>
+        <script src="/project_resources/search.js"></script>
+        <script src="/project_resources/searchcursor.js"></script>
+        <script src="/project_resources/jump-to-line.js"></script>
+        <script src="/project_resources/dialog.js"></script>
+        <script src="/project_resources/matchesonscrollbar.js"></script>
+        <script src="/project_resources/annotatescrollbar.js"></script>
+        <script src="/project_resources/lint-javascript.js"></script>
+        <script src="/project_resources/lint.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js"></script>
+        <link rel="stylesheet" href="/project_resources/lint.css">
+        <link href="/project_resources/matchesonscrollbar.css" rel="stylesheet">
+        <link href="/project_resources/dialog.css" rel="stylesheet">
+        <!--Theme-->
+        <link href="/project_resources/all-hallow-eve.css" rel="stylesheet">
         <link href="/project_resources/css/animate.css" rel="stylesheet">
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -37,19 +52,34 @@
             window.onload = function(editableCodeMirror){
                 window['editableCodeMirror'] = CodeMirror.fromTextArea(document.getElementById('codesnippet_editable'), {
                     mode: "javascript",
-                    theme: "night",
-                    lineNumbers: true
+                    theme: "all-hallow-eve",
+                    lineNumbers: true,
+                    styleActiveLine: true,
+                    autoCloseBrackets: true,
+                    gutters: ['Codemirror-lint-markers'],
+                    lint: true
                 });
                 window['console_log'] = 'Console:~$ Welcome to the codeplanet code editor';
                 $('#result').val(console_log);
             }
+            var input = document.getElementById("select");
+            function selectTheme() {
+                var theme = input.options[input.selectedIndex].textContent;
+                editor.setOption("theme", theme);
+            }
+            $(function() {
+                $('#changetheme').click(toggletheme);
+                function toggletheme() {
+                    $("#select").val(8).trigger('change');
+                }
+            });
             function run_stuff(){
                 var too_big = false;
                 try {
                     if(editableCodeMirror.getValue().length >= 0){
                         var input = editableCodeMirror.getValue('\n');
                         if(input.includes('Infinity') == false){
-                            var output = eval(input) + " ";
+                            var output = eval(input);
                             
                             if(output.toString().length <= 1000){
                                 //Decides if window is redirecting and displays a special message if it is
@@ -65,15 +95,12 @@
                                 setInterval(function(){
                                     if(redirecting){
                                         setTimeout(function(){
-                                            console_log += "\nConsole:~$ There was an attempt to redirect to "  +  output;
+                                            console_log += "\nConsole:~$ There was an attempt to redirect to \'"  +  output + "\' If you do not trust this URL, please do not run this program again.";
                                             $('#result').val(console_log);
                                         }, 0);
                                     }
                                     window['redirecting'] = false;
-                                }, 100);
-                                window.removeEventListener("beforeunload", function(){
-                                    return null;
-                                });
+                                }, 0);
                             }else if(output.toString().length > 1000){
                                 window['output'];
                                 throw 'JustUsError: Please do not output anything greater than 1000 characters. K thanks.';
@@ -89,6 +116,9 @@
                 }
                 var textarea = document.getElementById('result');
                 textarea.scrollTop = textarea.scrollHeight;
+                window.removeEventListener("beforeunload", function(){
+                    return null;
+                });
             }
             
             function clear_stuff(){
@@ -96,30 +126,38 @@
                 console_log = "Console:~$ Welcome to the codeplanet code editor";
                 $('#result').val(console_log);
             }
+        var input = document.getElementById('select');
+        function selectTheme() {
+            var theme = input.options[input.selectedIndex].innerHTML;
+            editor.setOption('theme', theme);
+        }
+    
         </script>
     </head>
-        <body style="padding-top: 10%; overflow-x:hidden;">
-                <div class="row animated fadeIn" style="padding-left: 6%; padding-right: 6%;">
-                    <div class="col-lg">
-                        <div style="width: 100%; height: 100%; margin: auto;">
-                            <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable" style="width: 100%; height: 5%;">//Have a function return a value to get a text output</textarea>
-                        </div>
-                        <!--CodeMirror editable code window-->
-                        <div id="editable"></div>
+    <body style="padding-top: 10%; overflow-x:hidden; font-size: 1rem;">
+        <div class="row animated fadeIn" style="padding-left: 6%; padding-right: 6%;">
+            <div class="col-lg">
+                <div style="width: 100%; height: 100%; margin: auto;">
+                    <form>
+                        <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable" style="width: 100%; height: 5%;">//Have a function return a value to get a text output</textarea>
+                    </form>
+                </div>
+                <!--CodeMirror editable code window-->
+                <div id="editable"></div>
+            </div>
+            <div class="col-lg" style="vertical-align: middle; margin-top: 2%;">
+                <div style="height: 100%">
+                <div class="row">
+                    <div class="btn-group" role="group" style="margin: auto;">
+                        <button role="button" class="btn deep-purple btn-md" id="run_btn" onClick="run_stuff();"><span><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Run</span></button>
+                        <button role="button" class="btn deep-purple btn-md" id="clear_btn" onClick="clear_stuff();"><span><i class="fa fa-times" aria-hidden="true"></i> Clear</span></button>
+                        <button role="button" class="btn deep-purple btn-md disabled" id="save_btn" onClick="save_stuff();"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button>
                     </div>
-                    <div class="col-lg" style="vertical-align: middle; margin-top: 2%;">
-                        <div style="height: 100%">
-                        <div class="row">
-                            <div class="btn-group" role="group" style="margin: auto;">
-                                <button role="button" class="btn deep-purple btn-md" id="run_btn" onClick="run_stuff();"><span><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Run</span></button>
-                                <button role="button" class="btn deep-purple btn-md" id="clear_btn" onClick="clear_stuff();"><span><i class="fa fa-times" aria-hidden="true"></i> Clear</span></button>
-                                <button role="button" class="btn deep-purple btn-md disabled" id="save_btn" onClick="save_stuff();"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button>
-                            </div>
-                        </div>
-                        <div class="row" style="height: inherit;">
-                            <textarea rows="4" cols="25" style="margin-top: 5%; margin-bottom: 5%; width: 100%; height: 77%; overflow: auto;outline: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,Lucida Console,monospace;font-size:12px;background-color: #000000;color: #00ff00;" id="result" onkeydown="return false;" onClick="return false;"></textarea>
-                        </div>
-                        </div>
-                    </div>
-        </body>
+                </div>
+                <div class="row" style="height: inherit;">
+                    <textarea rows="4" cols="25" style="margin-top: 5%; margin-bottom: 5%; width: 100%; height: 77%; overflow: auto;outline: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,Lucida Console,monospace;font-size:12px;background-color: #000000;color: #00ff00;" id="result" onkeydown="return false;" onClick="return false;"></textarea>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
