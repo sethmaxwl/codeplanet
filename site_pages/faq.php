@@ -28,7 +28,7 @@
             <div class="divider-new pt-5" style="margin-bottom: 0;">
                 <h2 class="h2-responsive wow" style="animation-name: none; visibility: visible;">Frequently Asked Questions</h2>
             </div>
-            <p style="animation-name: none; visibility: visible; text-align: center; margin-bottom: 3%;">Click on a question for an answer</p>
+            <p style="animation-name: none; visibility: visible; text-align: center; margin-bottom: 3%;">Click on a question for the answer</p>
         </div>
         <!--Defines a new HTML instance to have an accordion that works independently of mdbootstrap-->
         <div style="width: 90%; margin: auto;">

@@ -3,7 +3,7 @@ session_start();
 $name = $_SESSION['username'];
 if ($name === Null) {
   echo '
-   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #342B46">
+   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #342B46; z-index: 0;">
     <a class="navbar-brand" href="main.php"><img src="/images/mdearth.png" style="width: 25px; height: auto; margin-right: 5%; vertical-align: middle;">codeplanet</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">

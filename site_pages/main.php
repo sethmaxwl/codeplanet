@@ -143,7 +143,7 @@
                             <h2 class="h2-responsive">codeplanet</h1>
                         </li>
                         <li>
-                            <p>The programming social media platform</p>
+                            <p>the programming social media platform</p>
                         </li>
                         <li>
                             <!--Sign up button-->
