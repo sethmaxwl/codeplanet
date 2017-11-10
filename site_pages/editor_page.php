@@ -50,6 +50,7 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="/project_resources/MDB-Free/js/mdb.min.js"></script>
         <script>
+        window['ignore_error'] = false;
             //Initializes codemirror instance and applies all styling and functions
             window.onload = function(editableCodeMirror){
                 window['editableCodeMirror'] = CodeMirror.fromTextArea(document.getElementById('codesnippet_editable'), {
@@ -73,24 +74,108 @@
             */
             
             //Prints out whatever is passed in as the input
-            function print(input){
-                return(input);
+            function print(str){
+                console_log += '\nConsole:~$ ' + str;
+                $('#result').val(console_log);
+                window['ignore_error'] = true;
             }
-            //Removes leading and trailing whitespace of a string
+            
+            //Returns a string without leading and trailing whitespace
             function strip(str) {
                 return str.replace(/^\s+|\s+$/g, '');
             }
+            
             //Displays a message in the console that displays all pre-defined functions
             function help(){
-                console_log += "\nConsole:~$ \n /-----------------\\ \n |List of Functions|\n \\-----------------/\n | print(val); -> prints out the value in the console\n | strip(val); -> returns the value without leading and trailing whitespace\n ----------------------------------";
+                console_log += "\nConsole:~$ \n /-----------------\\ \n |List of Functions|\n \\-----------------/\n | print(str); -> prints out the value in the console\n | strip(str); -> returns the value without leading and trailing whitespace\n | randInt(num1, num2); -> returns a randomly generated integer between parameters\n | randFloat(num1, num2); ->  returns a randomly generated float between parameters\n | sec(num); -> returns the secant of a number\n | csc(num); -> returns the cosecant of a number\n | cot(num); -> returns the cotangent of a number\n | average(arr); -> returns the average of an array of numbers\n | sumOf(arr); -> returns the sum of an array of numbers\n----------------------------------";
                 $('#result').val(console_log);
+                window['ignore_error'] = true;
             }
+            
+            //Returns a random integer between two parameters
+            function randInt(num1, num2){
+                if(num2.toString().length < 9){
+                    var diff = num2 - num1;
+                    var possible_ints = [num1, num2];
+                    while(diff > 0){
+                        var addition = num2 - 1;
+                        possible_ints.push(addition);
+                        diff -= 1;
+                        num2 -= 1;
+                    }
+                    var rand_int = possible_ints[Math.floor(Math.random() * possible_ints.length)];
+                    return(rand_int);
+                }else{
+                    console_log += '\nConsole:~$ Gap between numbers is too big. Please reduce.';
+                    $('#result').val(console_log);
+                    window['ignore_error'] = true;
+                }
+            }
+            
+            //Generates a random floating point number between two parameters
+            function randFloat(num1, num2){
+                if(num2.toString().length < 9){
+                    var diff = num2 - num1;
+                    var possible_ints = [num1, num2];
+                    while(diff > 0){
+                        var addition = num2 - 1;
+                        possible_ints.push(addition);
+                        diff -= 1;
+                        num2 -= 1;
+                    }
+                    var rand_int = possible_ints[Math.floor(Math.random() * possible_ints.length)];
+                    return(rand_int * Math.random());
+                }else{
+                    console_log += '\nConsole:~$ Gap between numbers is too big. Please reduce.';
+                    $('#result').val(console_log);
+                    window['ignore_error'] = true;
+                }
+            }
+            
+            //Returns the average of an array of numbers
+            function average(arr){
+                var sum = 0;
+                for( var i = 0; i < arr.length; i++ ){
+                    sum += parseInt( arr[i], 10 );
+                }
+                return(sum/arr.length);
+            }
+            
+            //Returns the cotangent of a number
+            function cot(num){
+                tangent = Math.tan(num);
+                return(1/tangent);
+            }
+            
+            //Returns the cosecant of a number
+            function csc(num){
+                sine = Math.sin(num);
+                return(1/sine);
+            }
+            
+            //Returns the secant of a number
+            function sec(num){
+                cosine = Math.cos(num);
+                return(1/cosine);
+            }
+            
+            //Returns the sum of all elements in an array
+            function sumOf(arr){
+                var sum = 0;
+                for( var i = 0; i < arr.length; i++ ){
+                    sum += parseInt( arr[i], 10 );
+                }
+                return(sum);
+            }
+            /*
+            End of pre-defined functions
+            */
             
             //Function to execute code from the editor
             function run_stuff(){
                 try {
                     if(editableCodeMirror.getValue().length >= 0){
-                        var input = editableCodeMirror.getValue('\n');
+                        window['input'] = editableCodeMirror.getValue('\n');
                         //Tests if the input contains the word 'Infinity'; this is implemented to prevent infinite loops
                         if(input.includes('Infinity') == false){
                             //Executes the code and stores the output as the output variable
@@ -134,8 +219,10 @@
                         console_log += '\nConsole:~$ ' + err.name + ': ' + err.message;
                         $('#result').val(console_log);
                     }else{
-                        console_log += '\nConsole:~$ '
-                        $('#result').val(console_log);
+                        if(!ignore_error){
+                            console_log += '\nConsole:~$ '
+                            $('#result').val(console_log);
+                        }
                     }
                 }
                 //Auto-scrolls the console to the bottom
@@ -148,31 +235,30 @@
             
             //Clears the editor
             function clear_editor(){
-                editableCodeMirror.setValue('//The console has been cleared');
+                editableCodeMirror.setValue('');
             }
             
             //Clears the console
             function clear_console(){
-                console_log = "Console:~$ Cleared";
+                console_log = "Console:~$ ";
                 $('#result').val(console_log);
             }
         </script>
+        <style>
+            .CodeMirror{
+                height: 80% !important;
+            }
+        </style>
     </head>
     <body style="padding-top: 10%; overflow-x:hidden; font-size: 1rem;">
-        <div class="row animated fadeIn" style="padding-left: 6%; padding-right: 6%;">
-            <div class="col" style="width: 100%; height: 100%; margin: auto;">
-                <div style="width: 100%; height: 100%; margin: auto;">
-                    <form>
-                        <!--Code editor-->
-                        <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable" style="min-width: 100%; max-width: 100%; overflow:auto; height: 5%;">//Call the help function for a list of functions</textarea>
-                    </form>
-                </div>
-                <!--CodeMirror editable code window-->
-                
+        <div class="row animated fadeIn" style="height: 100%;">
+            <div class="col">
+                <!--Code editor-->
+                <textarea rows="4" cols="50" name="codesnippet_editable" id="codesnippet_editable" style="min-width: 100%; max-width: 100%; overflow:auto;">//Call the help function for a list of functions</textarea>
             </div>
-            <div class="col" style="vertical-align: middle; margin-top: 2%;">
-                <div style="height: 100%">
-                <div class="row">
+            <div class="col">
+                <textarea rows="4" cols="25" style="height: 60%; width: 100%; overflow: auto;outline: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,Lucida Console,monospace;font-size:12px;background-color: #000000;color: #00ff00;resize: none;" id="result" onkeydown="return false;" onClick="return false;"></textarea>
+                <div class="row" style="margin: auto; margin-top: 25px; height: auto;">
                     <div class="btn-group" role="group" style="margin: auto;">
                         <button role="button" class="btn deep-purple btn-md" id="run_btn" onClick="run_stuff();"><span><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Run</span></button>
                         <button role="button" class="btn deep-purple btn-md" id="clear1_btn" data-toggle="modal" data-target="#clear_modal"><span><i class="fa fa-times" aria-hidden="true"></i> Clear Editor</span></button>
@@ -180,11 +266,9 @@
                         <button role="button" class="btn deep-purple btn-md disabled" id="save_btn" onClick="save_stuff();"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button>
                     </div>
                 </div>
-                <div class="row" style="height: inherit;">
-                    <textarea rows="4" cols="25" style="margin-top: 5%; margin-bottom: 5%; width: 100%; height: 77%; overflow: auto;outline: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,Lucida Console,monospace;font-size:12px;background-color: #000000;color: #00ff00;" id="result" onkeydown="return false;" onClick="return false;"></textarea>
-                </div>
             </div>
         </div>
+        <!--Modal to ask if user wants to clear editor-->
         <div class="modal fade" id="clear_modal" tabindex="-1" role="dialog" aria-labelledby="clear_modal_label" aria-hidden="true" data-backdrop="false">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

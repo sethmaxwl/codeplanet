@@ -92,7 +92,7 @@
             <button class="accordion">How can I output to the JavaScript console?</button>
             <div class="panel">
               <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible; margin-top: 1%;"><b>Q. How can I output to the JavaScript console?</b></h4>
-              <p>A. To get an output, you must declare a function that returns the value of whatever you want the console to display. Alternatively, you may use window.onload to print a value to the console. A few key notes to remember when doing this is the 1000 character limit on outputs. Also, using the word "Infinity" anywhere in the input is prohibited, as infinite loops aren't too great for codeplanet.</p>
+              <p>A. To get an output, you can use the print function. Just pass whatever you want to be the output and this will display it on the console. Be sure to look at the help function to view all of the pre-defined functions we have made for codeplanet.</p>
             </div>
             
             <button class="accordion">What features does the JavaScript editor have?</button>
