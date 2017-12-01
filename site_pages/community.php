@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php include('navbar.php'); ?>
+  <?php
+    include('navbar.php');
+    //if(!isset($_SESSION['username'])){
+    //header("Location:Login.php");}
+  ?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -95,3 +99,4 @@
     
 
   </body>
+</html>

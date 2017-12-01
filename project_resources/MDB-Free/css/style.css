@@ -119,10 +119,34 @@ header,
 }
 
 .login_form{
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
     padding: 20px;
 }
 
+#run_btn{
+    transition-property: background !important;
+    transition-duration: 0.25s !important;
+    transition-timing-function: ease-in-out !important;
+}
+#run_btn:hover{
+    background: #3A0E85 !important;
+}
+#clear1_btn{
+    transition-property: background !important;
+    transition-duration: 0.25s !important;
+    transition-timing-function: ease-in-out !important;
+}
+#clear1_btn:hover{
+    background: #3A0E85 !important;
+}
+#clear2_btn{
+    transition-property: background !important;
+    transition-duration: 0.25s !important;
+    transition-timing-function: ease-in-out !important;
+}
+#clear2_btn:hover{
+    background: #3A0E85 !important;
+}

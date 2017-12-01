@@ -4,49 +4,49 @@
 <?php 
 include('navbar.php');
 
-if (!empty($_POST["inputEmail"])){
-    $servername = "localhost";
-    $username = "westv1387";
-    $password = "";
-    $dbname = "CodeTN";
+// if (!empty($_POST["inputEmail"])){
+//     $servername = "localhost";
+//     $username = "westv1387";
+//     $password = "";
+//     $dbname = "CodeTN";
     
-    //Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    //Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    $username = $_POST["inputEmail"];
-    $pass = password_hash($_POST["inputPassword"], PASSWORD_BCRYPT, ["cost"=>10]);
+//     //Create connection
+//     $conn = new mysqli($servername, $username, $password, $dbname);
+//     //Check connection
+//     if ($conn->connect_error) {
+//         die("Connection failed: " . $conn->connect_error);
+//     }
+//     $username = $_POST["inputEmail"];
+//     $pass = password_hash($_POST["inputPassword"], PASSWORD_BCRYPT, ["cost"=>10]);
     
     
-    $sql = $conn->prepare("INSERT INTO User (username, password) VALUES (?,?);");
-    $sql->bind_param("ss",$username, $pass);
-    $sql->execute();
-    $conn->close();
-}
+//     $sql = $conn->prepare("INSERT INTO User (username, password) VALUES (?,?);");
+//     $sql->bind_param("ss",$username, $pass);
+//     $sql->execute();
+//     $conn->close();
+// }
 
-//this part needs fixing later
-if (!empty($_POST["loginEmail"])){
-    $servername = "localhost";
-    $username = "westv1387";
-    $password = "";
-    $dbname = "CodeTN";
+// //this part needs fixing later
+// if (!empty($_POST["loginEmail"])){
+//     $servername = "localhost";
+//     $username = "westv1387";
+//     $password = "";
+//     $dbname = "CodeTN";
     
-    //Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    //Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+//     //Create connection
+//     $conn = new mysqli($servername, $username, $password, $dbname);
+//     //Check connection
+//     if ($conn->connect_error) {
+//         die("Connection failed: " . $conn->connect_error);
+//     }
     
-    $username = $_POST["loginEmail"];
-    $sql = $conn->prepare("SELECT UserID FROM User WHERE username = ?;");
-    $sql->bind_param("s", $username);
+//     $username = $_POST["loginEmail"];
+//     $sql = $conn->prepare("SELECT UserID FROM User WHERE username = ?;");
+//     $sql->bind_param("s", $username);
     
-    $sql->execute();
-    $conn->close();
-}
+//     $sql->execute();
+//     $conn->close();
+// }
 ?>
 
     <head>

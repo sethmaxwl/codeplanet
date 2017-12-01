@@ -2,31 +2,32 @@
 <html lang="en">
     
 <?php 
-include('navbar.php');
+  include('navbar.php');
+  //include('user_signup.php');
+// $servername = "localhost";
+// $username = "westv1387";
+// $password = "";
+// $dbname = "CodeTN";
 
-$servername = "localhost";
-$username = "westv1387";
-$password = "";
-$dbname = "CodeTN";
+// //Create connection
+// $conn = new mysqli($servername, $username, $password, $dbname);
+// //Check connection
+// if ($conn->connect_error) {
+//   die("Connection failed: " . $conn->connect_error);
+// }
 
-//Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-//Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-//if (!empty($_POST["inputEmail"])){
-  $sql = $conn->prepare("INSERT INTO User (name,username,password) VALUES (?,?,?)");
-  $sql->bind_param("sss",$name,$username,$pass);
-  $name = $_POST["inputName"];
-  $username = $_POST["inputEmail"];
-  $options=["cost"=>10];
-  $pass = password_hash($_POST["inputPassword"], PASSWORD_BCRYPT, $options);
-  $sql->execute();
-//}  
-$sql->close();
-$conn->close();
+// //if (!empty($_POST["inputEmail"])){
+//   $sql = $conn->prepare("INSERT INTO User (name,username,password) VALUES (?,?,?)");
+//   $sql->bind_param("sss",$name,$username,$pass);
+//   $name = $_POST["inputName"];
+//   $username = $_POST["inputEmail"];
+//   $options=["cost"=>10];
+//   $pass = password_hash($_POST["inputPassword"], PASSWORD_BCRYPT, $options);
+//   //$query=mysql_query("INSERT INTO User (name,username,password) VALUES ($name, $username, $password)");
+//   $sql->execute();
+// //}  
+// $sql->close();
+// $conn->close();
 ?>
   <head>
     <meta charset="utf-8">

@@ -98,12 +98,13 @@
             <button class="accordion">What features does the JavaScript editor have?</button>
             <div class="panel">
              <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible; margin-top: 1%;"><b>Q. What features does the JavaScript code editor have?</b></h4>
-              <p>A. The code editor has a few features that are designed to refine the user experience when writing programs.</p>
+              <p>A. The code editor has a few features that are designed to improve user experience when writing programs.</p>
               <ul>
                 <li>If the editor is selected, CTRL-F (Windows) or CMD-F (Mac) will open a search box within the editor where you can search for words in your program. If your program is long enough to have a scrollbar on the side, each time a search term is found, there will be a purple highlight on the sidebar.</li>
                 <li>The code editor has an auto-bracket feature that adds a closing bracket to any open bracket.</li>
                 <li>Variable names are colored green and italicized whenever a variable is defined. For each use of the variable after its definition, the variable is colored green. This is designed to help users keep track of where variables are defined and used.</li>
                 <li>The active line has a purple highlight to make it easier to find where you are editing in the editor.</li>
+                <li>The changeColor function allows the console's color to be changed. It accepts two parameters. The first one changes the color of the console text. The second one changes the color of the console background, and it is optional. Also, if the first parameter is 'revert,' the console will revert back to its original colors.</li>
               </ul>
             </div>  
             
