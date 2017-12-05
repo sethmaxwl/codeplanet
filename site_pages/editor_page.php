@@ -130,6 +130,12 @@
             #result::-webkit-scrollbar-corner {
                 background: transparent;
             }
+            .btnRunner{
+                display: block;
+            }
+            .btnLoader{
+                display: none;
+            }
         </style>
     </head>
     <body style="overflow-x:hidden; overflow-y: hidden; font-size: 1rem;">
@@ -143,7 +149,7 @@
                 <textarea rows="4" cols="25" style="height: 60%; width: 100%; overflow: auto;outline: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,Lucida Console,monospace;font-size:12px;background-color: #000000;color: #00ff00;resize: none;" id="result" onkeydown="return false;" onClick="return false;"></textarea>
                 <div class="row" style="margin: auto; margin-top: 25px; height: auto;">
                     <div class="btn-group" role="group" style="margin: auto;">
-                        <button role="button" class="btn deep-purple btn-md" id="run_btn" onClick="run();"><span><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Run</span></button>
+                        <button role="button" class="btn deep-purple btn-md" id="run_btn" onClick="run();"><span class="btnRunner"><i class='fa fa-arrow-circle-o-left' aria-hidden='true'></i> Run</span><span class="btnLoader"><i class='fa fa-cog fa-spin fa-fw' aria-hidden='true'></i></span></button>
                         <button role="button" class="btn deep-purple btn-md" id="clear1_btn" data-toggle="modal" data-target="#clear_modal"><span><i class="fa fa-times" aria-hidden="true"></i> Clear Editor</span></button>
                         <button role="button" class="btn deep-purple btn-md" id="clear2_btn" onClick="clear_console();"><span><i class="fa fa-times" aria-hidden="true"></i> Clear Console</span></button>
                         <button role="button" class="btn deep-purple btn-md disabled" id="save_btn" onClick="save_stuff();"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button>

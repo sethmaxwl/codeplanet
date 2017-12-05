@@ -344,6 +344,9 @@ End of library
 
 //Executes code from the editor
 function run(){
+  $('#run_btn').click(false);
+  $('.btnRunner').css('display','none');
+  $('.btnLoader').css('display', 'block');
   try {
     if(editableCodeMirror.getValue().length >= 0){
       window['input'] = editableCodeMirror.getValue('\n');
@@ -363,17 +366,15 @@ function run(){
             console_log += "\nConsole:~$ " +  output;
             $('#result').val(console_log);
           }
-          setInterval(function(){
-            if(redirecting){
-              setTimeout(function(){
-                if(output.includes('http') || output.includes('www')){
-                  console_log += "\nConsole:~$ There was an attempt to redirect to \'"  +  output + "\' If you do not trust this URL, please do not run this program again.";
-                  $('#result').val(console_log);
-                }
-              }, 0);
+          if(redirecting){
+            $('.btnRunner').css('display','none');
+            $('.btnLoader').css('display', 'block');
+            if(output.includes('http') || output.includes('www')){
+              console_log += "\nConsole:~$ There was an attempt to redirect to \'"  +  output + "\' If you do not trust this URL, please do not run this program again.";
+              $('#result').val(console_log);
             }
-            window['redirecting'] = false;
-          }, 0);
+          }
+          window['redirecting'] = false;
         }else if(output.toString().length > 1000){
         //Error message that is displayed if output is greater than 1000 characters
           window['output'];
@@ -403,6 +404,11 @@ function run(){
   window.removeEventListener("beforeunload", function(){
     return null;
   });
+  setTimeout(function(){
+    $('.btnRunner').css('display','block');
+    $('.btnLoader').css('display', 'none');
+  }, 500);
+  $('#run_btn').click(true);
 }
 
 //Clears the editor
