@@ -2,7 +2,34 @@
 <html lang="en">
     
 <?php 
-  include('navbar.php');
+  include(dirname(_FILE_).'/site_pages/navbar.php');
+  include(dirname(_FILE_).'/site_pages/signup_processing.php');
+    
+  //   // set parameters and execute
+  // $msg = "";
+  // if(isset($_POST["submit"])){
+  //   $name = $_POST["name"];
+  //   $email = $_POST["email"];
+  //   $password = $_POST["password"];
+     
+  //   $name = mysqli_real_escape_string($db, $name);
+  //   $email = mysqli_real_escape_string($db, $email);
+  //   $password = mysqli_real_escape_string($db, $password);
+  //   $password = md5($password);
+    
+  //   $sql="SELECT email FROM User WHERE email='email'";
+  //   $result=mysqli_query($conn,$sql);
+  //   $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+  //   if(mysqli_num_rows($result)==1){
+  //     $msg="This email has been registered.";
+  //   } else {
+  //       $query = mysqli_query($conn, "INSERT INTO User (name, email, password) VALUES ('$name','$email','$password'");
+  //       if($query){
+  //         $msg="You are now registered!";
+  //       }
+  //   }
+  // }
+  //require(dirname(_FILE_).'/../site_pages/signup_processing.php');
   //include('user_signup.php');
 // $servername = "localhost";
 // $username = "westv1387";
@@ -51,8 +78,9 @@
       <div class="full-bg-img flex-center">
         <div class="col-sm-3">
           <div class="container animated slideInUp" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
-            <form class="form-signin">
+            <form class="form-signin" >
               <h2 class="form-signin-heading" style="text-align: center; font-size: 140%;">...or Sign Up!</h2>
+              <input type="hidden" name="submitted" id= "submitted" value="1"/>
               <label for="inputName" class="sr-only">Name</label>
               <input type="text" id="inputName" class="form control" placeholder="Name" required="" autofocus="">
               <label for="inputEmail" class="sr-only">Email address</label>

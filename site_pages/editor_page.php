@@ -38,6 +38,7 @@
         <link rel="stylesheet" href="/project_resources/lint.css">
         <link href="/project_resources/matchesonscrollbar.css" rel="stylesheet">
         <link href="/project_resources/dialog.css" rel="stylesheet">
+        <link href="/project_resources/MDB-Free/font/fa/fa-animations.css" rel="stylesheet">
         <!--Theme-->
         <link href="/project_resources/all-hallow-eve.css" rel="stylesheet">
         <link href="/project_resources/css/animate.css" rel="stylesheet">
@@ -49,21 +50,23 @@
         <script type="text/javascript" src="/project_resources/MDB-Free/js/bootstrap.min.js"></script>
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="/project_resources/MDB-Free/js/mdb.min.js"></script>
-        <!-- Code execution and custom JS library-->
+        <!-- Code execution file-->
         <script type="text/javascript" src="/project_resources/sethLib.js"></script>
         <script type="text/javascript">
-            $(document).ready(function(){
-                $("#modalNotLoggedIn").modal('show');
-            });
+            //$(document).ready(function(){
+            //    setTimeout(function(){
+            //        $("#modalNotLoggedIn").modal('show');
+            //    }, 5000);
+            //});
             // Get the modal
-            var modal = document.getElementById('#modalNotLoggedIn');
+            //var modal = document.getElementById('#modalNotLoggedIn');
 
             // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    $(modal).modal('hide');
-                }
-            }
+            //window.onclick = function(event) {
+            //    if (event.target == modal) {
+            //        $(modal).modal('hide');
+            //    }
+            //}
         </script>
         <style>
             #run_btn{
@@ -72,7 +75,7 @@
                 transition-timing-function: ease-in-out !important;
             }
             #run_btn:hover{
-                background: #3A0E85 !important;
+                background: #2D9434 !important;
             }
             #clear1_btn{
                 transition-property: background !important;
@@ -80,7 +83,7 @@
                 transition-timing-function: ease-in-out !important;
             }
             #clear1_btn:hover{
-                background: #3A0E85 !important;
+                background: #391690 !important;
             }
             #clear2_btn{
                 transition-property: background !important;
@@ -88,7 +91,7 @@
                 transition-timing-function: ease-in-out !important;
             }
             #clear2_btn:hover{
-                background: #3A0E85 !important;
+                background: #D93602 !important;
             }
             .CodeMirror{
                 height: 100% !important;
@@ -136,23 +139,38 @@
             .btnLoader{
                 display: none;
             }
+            .clearingConsole{
+                display: block;
+            }
+            .eraserAnimation1{
+                display: none;
+            }
+            .clearingEditor{
+                display: block;
+            }
+            .eraserAnimation2{
+                display: none;
+            }
         </style>
     </head>
     <body style="overflow-x:hidden; overflow-y: hidden; font-size: 1rem;">
         <div class="row animated fadeIn" style="max-height: 100%; min-height: 100%;">
             <div class="col">
                 <!--Code editor-->
-                <textarea name="codesnippet_editable" id="codesnippet_editable" style="min-width: 100%; max-width: 100%; overflow:hidden;">//Call the help function for a list of functions</textarea>
+                <textarea name="codesnippet_editable" id="codesnippet_editable" style="min-width: 100%; max-width: 100%; overflow:hidden;">//Call the help function for a list of pre-defined functions</textarea>
             </div>
             <!--Container for result textarea and buttons-->
-            <div class="col" style="transform: translateY(15%);">
+            <div class="col" style="margin-right: 2%; transform: translateY(-5%);">
+                <div class="divider-new pt-5" style="margin-bottom: 2%;">
+                    <h2 class="h2-responsive wow" style="animation-name: none; visibility: visible;">JavaScript Code Editor</h2>
+                </div>
                 <textarea rows="4" cols="25" style="height: 60%; width: 100%; overflow: auto;outline: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,Lucida Console,monospace;font-size:12px;background-color: #000000;color: #00ff00;resize: none;" id="result" onkeydown="return false;" onClick="return false;"></textarea>
                 <div class="row" style="margin: auto; margin-top: 25px; height: auto;">
                     <div class="btn-group" role="group" style="margin: auto;">
-                        <button role="button" class="btn deep-purple btn-md" id="run_btn" onClick="run();"><span class="btnRunner"><i class='fa fa-arrow-circle-o-left' aria-hidden='true'></i> Run</span><span class="btnLoader"><i class='fa fa-cog fa-spin fa-fw' aria-hidden='true'></i></span></button>
-                        <button role="button" class="btn deep-purple btn-md" id="clear1_btn" data-toggle="modal" data-target="#clear_modal"><span><i class="fa fa-times" aria-hidden="true"></i> Clear Editor</span></button>
-                        <button role="button" class="btn deep-purple btn-md" id="clear2_btn" onClick="clear_console();"><span><i class="fa fa-times" aria-hidden="true"></i> Clear Console</span></button>
-                        <button role="button" class="btn deep-purple btn-md disabled" id="save_btn" onClick="save_stuff();"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button>
+                        <button role="button" class="btn green btn-md" id="run_btn" onClick="run();" style="width: 155px !important;"><span class="btnRunner"><i class='fa fa-arrow-circle-o-left' aria-hidden='true'></i> Run</span><span class="btnLoader"><i class='fa fa-cog fa-spin fa-fw' aria-hidden='true'></i></span></button>
+                        <button role="button" class="btn deep-purple btn-md" id="clear1_btn" data-toggle="modal" data-target="#clear_modal" style="width: 155px !important;"><span class="clearingEditor"><i class="fa fa-times" aria-hidden="true"></i> Clear Editor</span><span class="eraserAnimation2"><i class="fa fa-eraser faa-wrench animated" aria-hidden="true"></i></span></button>
+                        <button role="button" class="btn deep-orange btn-md" id="clear2_btn" onClick="clear_console();" style="width: 155px !important;"><span class="clearingConsole"><i class="fa fa-times" aria-hidden="true"></i> Clear Console</span><span class="eraserAnimation1"><i class="fa fa-eraser faa-wrench animated" aria-hidden="true"></i></span></button>
+                        <button role="button" class="btn deep-purple btn-md disabled" id="save_btn" onClick="save_stuff();" style="width: 155px !important;"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button>
                     </div>
                 </div>
             </div>
@@ -165,7 +183,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to clear the editor?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
-                    <div class="modal-body">Clearing the editor means that the code you wrote will vanish. Make sure you don't lose anything if you decide to clear it.</div>
+                    <div class="modal-body"> the editor means that the code you wrote will vanish. Make sure you don't lose anything if you decide to clear it.</div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success"  onClick="clear_editor();" data-dismiss="modal">Clear Editor</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal" style="radius: 15px !important;">Cancel</button>
@@ -175,14 +193,11 @@
         </div>
         <div class="modal fade left modal-scrolling" id="modalNotLoggedIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-side modal-bottom-left modal-notify modal-info" role="document">
-                <!--Content-->
                 <div class="modal-content">
-                    <!--Header-->
                     <div class="modal-header">
                         <p class="heading">Not Logged In?</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="white-text">×</span></button>
                     </div>
-                    <!--Body-->
                     <div class="modal-body">
                         <div class="row">
                             <div class="col">
@@ -198,7 +213,6 @@
                         </div>
                     </div>
                 </div>
-                <!--/.Content-->
             </div>
         </div>
     </body>

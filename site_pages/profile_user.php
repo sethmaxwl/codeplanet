@@ -3,17 +3,17 @@
 <?php 
 include('navbar.php');
 
-$servername = "localhost";
-$username = "westv1387";
-$password = "";
-$dbname = "CodeTN";
+// $servername = "localhost";
+// $username = "westv1387";
+// $password = "";
+// $dbname = "CodeTN";
 
-//Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-//Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+// //Create connection
+// $conn = new mysqli($servername, $username, $password, $dbname);
+// //Check connection
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// } 
 
 ?>
 

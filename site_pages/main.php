@@ -147,8 +147,7 @@
                         </li>
                         <li>
                             <!--Sign up button-->
-                            <a href="/site_pages/login.php" class="btn purple">Sign up</a>
-                            <a href="/site_pages/profile_user.php" class="btn deep-purple">Profile Page</a>
+                            <a href="/site_pages/login.php" class="btn purple btn-block">Sign up</a>
                         </li>
                         </div>
                     </div>

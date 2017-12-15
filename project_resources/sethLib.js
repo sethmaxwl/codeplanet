@@ -1,7 +1,10 @@
 /*
 
+DEMOS for presentations and such
+
 rainbows.js
 
+//Picks two random hex colors and sets the console text to one and the console background to the other each second
 var hexes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'B', 'C', 'D', 'E', 'F'];
 function generateColor(){
   color = '#';
@@ -19,6 +22,18 @@ setInterval(function(){
 
 aesthetic.js
 
+//Takes a string and prints it to the console one letter at a time with a space in front of each new letter
+//Ex. output for input='codeplanet'
+//$c
+//$c o
+//$c o d
+//$c o d e
+//$c o d e p
+//$c o d e p l
+//$c o d e p l a
+//$c o d e p l a n
+//$c o d e p l a n e
+//$c o d e p l a n e t
 var string = prompt('Enter a string');
 var newString = '';
 var hexes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'B', 'C', 'D', 'E', 'F'];
@@ -42,6 +57,7 @@ changeColor(generateColor());
 
 clock.js
 
+//Prints a timestamp to the console that clears the previous stamp and updates itself every millisecond
 setInterval(function(){
   clear_console();
   var now = new Date();
@@ -57,7 +73,7 @@ setInterval(function(){
 }, 1);
 
 oscilation.js
-
+//Takes a string input and prints it to console while oscillating the text size from 1pt font to 70pt font
 clear_console();
 changeFont(null, '12px');
 print(prompt('enter a string'));
@@ -342,9 +358,20 @@ function isString(str){
 End of library
 */
 
+//Clears the console
+function clear_console(){
+  $('.clearingConsole').css('display', 'none');
+  $('.eraserAnimation1').css('display', 'block');
+  console_log = "Console:~$ ";
+  $("#result").val(console_log);
+  setTimeout(function(){
+    $('.clearingConsole').css('display', 'block');
+    $('.eraserAnimation1').css('display', 'none');
+  }, 2000);
+}
+
 //Executes code from the editor
 function run(){
-  $('#run_btn').click(false);
   $('.btnRunner').css('display','none');
   $('.btnLoader').css('display', 'block');
   try {
@@ -407,17 +434,87 @@ function run(){
   setTimeout(function(){
     $('.btnRunner').css('display','block');
     $('.btnLoader').css('display', 'none');
-  }, 500);
-  $('#run_btn').click(true);
+  }, 1000);
 }
 
 //Clears the editor
 function clear_editor(){
+  $('.eraserAnimation2').css('display', 'block');
+  $('.clearingEditor').css('display', 'none');
   editableCodeMirror.setValue('');
+  setTimeout(function(){
+    $('.clearingEditor').css('display', 'block');
+    $('.eraserAnimation2').css('display', 'none');
+  }, 2000);
+}4
+
+function rainbow(){
+  var hexes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'B', 'C', 'D', 'E', 'F'];
+  function generateColor(){
+    color = '#';
+    for(var i=0;i<6;i++){
+      color += hexes[randInt(0, hexes.length-1)];
+    }
+    return(color);
+  }
+  var fonts = ['Arial', 'Arial Black', 'Arial Narrow', 'Arial Rounded RT Bold', 'Avant Garde', 'Calibri', 'Candara', 'Century Gothic', 'Franklin Gothic Medium', 'Geneva', 'Gill Sans', 'Helvetica', 'Impact', 'Lucida Grande', 'Optima', 'Segoe UI', 'Tahoma', 'Trebuchet MS', 'Verdana'];
+  setInterval(function(){
+    var fontPick = fonts[randInt(0, fonts.length)];
+    changeColor(generateColor(), generateColor());
+    changeFont(fontPick, randInt(1, 100) + 'px');
+  }, 1000);
 }
 
-//Clears the console
-function clear_console(){
-  console_log = "Console:~$ ";
-  $('#result').val(console_log);
+function aesthetic(){
+  var string = prompt('Enter a string');
+  var newString = '';
+  for(var i=0;i<string.length;i++){
+    if(string[i] != ' '){
+      newString += string[i] + ' ';
+      print(newString);
+    }else{
+      newString += ' ';
+    }
+  }
+}
+
+function clock(){
+  setInterval(function(){
+    clear_console();
+    var now = new Date();
+    var hour = now.getHours(),
+    minutes = now.getMinutes(),
+    seconds = now.getSeconds(),
+    msec = now.getMilliseconds(),
+    mo = now.getMonth(),
+    dy = now.getDate(),
+    yr = now.getFullYear();
+    print(mo+1 + '/' + dy + '/' + yr);
+    print(hour + ":" + minutes + ":" + seconds + ":" + msec);
+  }, 1);
+}
+
+function oscillate(){
+  clear_console();
+  changeFont(null, '12px');
+  print(prompt('enter a string'));
+  var increasing = 1;
+  window.fontSize = 12;
+  setInterval(function(){
+    changeFont(null, fontSize + 'px');
+    if(increasing == 1){
+      if(fontSize < 70){
+        fontSize += 1;
+      }else{
+        increasing = 0;
+      }
+    }
+    if(increasing === 0){
+      if(fontSize > 1){
+        fontSize -= 1;
+      }else{
+        increasing = 1;
+      }
+    }
+  }, 10);
 }
