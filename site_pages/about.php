@@ -1,6 +1,9 @@
+<?php 
+    session_start();
+    include('navbar_unauthorized.html'); 
+?>
 <!DOCTYPE html>
-<html>
-    <?php include('navbar.php'); ?>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,161 +24,59 @@
   <header class="animated slideInDown">
         <!--Intro Section-->
         <section class="view1 intro-1">
-          <div class="full-bg-img flex-center">
-              <div class="container">
-                <ul>
-                  <li>
-                    <h1 class="h1-responsive font-bold wow fadeInDown" data-wow-delay="0.2s" style="animation-name: none; visibility: visible; color: #FFFFFF;">About the So-Called Engineers</h1>
-                  </li>
-                </ul>
-              </div>
-          </div>
+            <div class="full-bg-img flex-center">
+                <div class="container">
+                    <h1 class="h1-responsive font-bold wow fadeInDown text-center" data-wow-delay="0.2s" id="about_splash">About codeplanet</h1>
+                    <div id="about_tag"></div>
+                    <div id="pulsing_arrow">
+                        <img src="/images/arrow.png" alt="Arrow" id="arrow" class="pulse">
+                        <p>Scroll down</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </header>
 
     <!-- Main container-->
     <div class="container">
-        <blockquote class="blockquote" style="margin-top: 5%; margin-bottom: 0;">
+        <blockquote class="blockquote" id="about_quote">
             <p class="mb-0">"<i>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</i>"</p>
             <footer class="blockquote-footer"><cite title="Source Title">Martin Fowler</cite></footer>
         </blockquote>
         <!--Section: About-->
-        <section id="about" class="text-center wow fadeIn" data-wow-delay="0.2s" style="animation-name: none; visibility: visible; margin-top: 0;">
-            <p style="margin-top: 10%;">This quote is the inspiration behind the codeplanet project.</p>
+        <section id="about" class="text-center wow fadeIn" data-wow-delay="0.2s" id="about_statement">
+            <p>This quote is the inspiration behind the codeplanet project.</p>
             <p>The developers of codeplanet are firm believers of the human element of programming. It is absolutely essential that programmers from all backgrounds collaborate with others to develop their skills, and in turn, develop better applications.</p>
-            <p>The purpose of codeplanet is to provide an ideal environment in which programmers can create and share JavaScript projects and leave feedback in the form of upvotes and comments.</p>
         </section>
         <!--Section: About-->
 
         <div class="divider-new pt-5">
-            <h2 class="h2-responsive wow fadeIn" style="animation-name: none; visibility: visible;">The Team</h2>
+            <h2 class="h2-responsive wow fadeIn" id="editor_tag">Who We Are and What We Do</h2>
         </div>
-        <div style="text-align: center;">
-            <img src="/images/team_pics/team_pic.jpg" class="img-fluid" style="max-width: 60%; height: auto; border-radius: 25px; box-shadow: 5px 5px 5px #D3D3D3;">
+            <section id="about" class="text-center wow fadeIn" data-wow-delay="0.2s" id="about_statement">
+                <p>Codeplanet is an online environment developed to mimic the Atom IDE. This is intended to bring a more enjoyable experience when developing programs in the browser, as users will be more familiar with the enironment. </p>
+                <p>The code editor has several unique features that offer a unique online development experience, which include syntax highlighting, inline syntax checking, a<a href="docs.php"> custom library</a>, and the ability to search the editor for a certain value. Codeplanet is dedicated to bringing the benefits of local IDEs to the online development community.</p>
+                <p>Currently, JavaScript is the only language supported by codeplanet, but in the future, additional languages will be added.</p>
+                <p>Another appeal is the ability to save projects to the community pages, where any other user can find and execute a project.</p>
+            </section>
         </div>
-        <section id="about" class="text-center wow fadeIn" data-wow-delay="0.2s" style="animation-name: none; visibility: visible; margin-top: 5%; margin-bottom: 5%;">
-            <p>The So-Called Engineers is a team of seniors from Hardin Valley Academy in Knoxville, TN.</p>
-        </section>
-        <!--Section: Best features-->
-        <section id="best-features">
-
-            <div class="row pt-3" style="margin-bottom: 0;">
-                
-                <!--First columnn-->
-                <div class="col-lg-3 mb-r">
-                    <!--Card-->
-                    <div class="card wow fadeIn" data-wow-delay="0.6s" style="max-width: 100%; animation-name: none; visibility: visible; border-radius: 25px; box-shadow: 5px 5px 5px #D3D3D3; border-style: solid; border-width: 1px; border-color: #D3D3D3;">
-
-                        <!--Card image-->
-                        <img class="img-fluid" src="/images/team_pics/micah.jpg" style="max-width: 100%; max-height: 25%; border-top-right-radius: 25px; border-top-left-radius: 25px;">
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title text-center">Micah Lambert</h4>
-                            <hr>
-                            <!--Text-->
-                            <div style="text-align: center;">
-                                <p class="card-text">I worked on the database integration with the website.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <!--First columnn-->
-
-                <!--Second columnn-->
-                <div class="col-lg-3 mb-r">
-                    <!--Card-->
-                    <div class="card wow fadeIn" data-wow-delay="0.4s" style="animation-name: none; visibility: visible; border-radius: 25px; box-shadow: 5px 5px 5px #D3D3D3; border-style: solid; border-width: 1px; border-color: #D3D3D3;">
-
-                        <!--Card image-->
-                        <img src="/images/team_pics/irene2.jpg" style="max-width: 100%; max-height: 25%; border-top-right-radius: 25px; border-top-left-radius: 25px;">
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title text-center">Irene Li</h4>
-                            <hr>
-                            <!--Text-->
-                            <div style="text-align: center;">
-                                <p class="card-text">I worked on the website's server-side code and database.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <!--Second columnn-->
-                
-                <!--Third columnn-->
-                <div class="col-lg-3 mb-r">
-                    <!--Card-->
-                    <div class="card wow fadeIn" data-wow-delay="0.2s" style="animation-name: none; visibility: visible; border-radius: 25px; box-shadow: 5px 5px 5px #D3D3D3; border-style: solid; border-width: 1px; border-color: #D3D3D3;">
-
-                        <!--Card image-->
-                        <img class="img-fluid" src="/images/team_pics/tonia2.jpg" style="max-width: 100%; max-height: 25%; border-top-right-radius: 25px; border-top-left-radius: 25px;">
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title text-center">Tonia Helmboldt</h4>
-                            <hr>
-                            <!--Text-->
-                            <div style="text-align: center;">
-                                <p class="card-text">I worked with Javascript and helped with the design.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <!--Third columnn-->
-                
-                <!--Third columnn-->
-                <div class="col-lg-3 mb-r">
-
-                    <!--Card-->
-                    <div class="card wow fadeIn" style="animation-name: none; visibility: visible; border-radius: 25px; box-shadow: 5px 5px 5px #D3D3D3; border-style: solid; border-width: 1px; border-color: #D3D3D3;">
-
-                        <!--Card image-->
-                        <img src="/images/team_pics/seth.jpg" style="max-width: 100%; max-height: 25%; border-top-right-radius: 25px; border-top-left-radius: 25px;">
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title text-center">Seth Maxwell</h4>
-                            <hr>
-                            <!--Text-->
-                            <div style="text-align: center;">
-                                <p class="card-text">I designed the front-end of this application and built the code editor.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <!--Third columnn-->
-            </div>
-
-        </section>
+    </div>
         <!--/Section: Best features-->
         <div class="divider-new pt-5">
-            <h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s" style="animation-name: none; visibility: visible;">Follow Us</h2>
+            <h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s" id="editor_tag">Follow Us on Social Media</h2>
         </div>
 
         <!--Section: About-->
-        <section id="about" class="text-center wow fadeIn container" data-wow-delay="0.2s" style="animation-name: none; visibility: visible;">
+        <section id="about" class="text-center wow fadeIn container" data-wow-delay="0.2s">
         
-        <div class="row" style="margin-bottom: 5%; margin-top: 0;">
+        <div class="row">
             <div class="col-sm"></div>
             <div class="col-sm">
-                <a class="btn" style="background-color: #1dcaff" href="https://twitter.com/codeplanet1" target="_blank"><i class="fa fa-twitter left"></i>Twitter</a>
+                <a class="btn" id="twitter_btn" href="https://twitter.com/codeplanet1" target="_blank"><i class="fa fa-twitter left"></i>Twitter</a>
             </div>
             <div class="col-sm">
-                <a class="btn" style="background-color: #d34836" href="https://plus.google.com/u/3/109087039167043596848" target="_blank"><i class="fa fa-google-plus left"></i>Google Plus</a>
+                <a class="btn" id="gplus_btn" href="https://plus.google.com/u/3/109087039167043596848" target="_blank"><i class="fa fa-google-plus left"></i>Google Plus</a>
             </div>
             <div class="col-sm"></div>
         </div>

@@ -103,7 +103,7 @@ window['ignore_error'] = false;
 window.onload = function(editableCodeMirror){
   window['editableCodeMirror'] = CodeMirror.fromTextArea(document.getElementById('codesnippet_editable'), {
     mode: "javascript",
-    theme: "all-hallow-eve",
+    theme: "bespin",
     lineNumbers: true,
     styleActiveLine: true,
     autoCloseBrackets: true,
@@ -244,7 +244,7 @@ function sec(num){
 function accumulate(arr){
   var sum = 0;
   for( var i = 0; i < arr.length; i++ ){
-    if(isNum(num)){
+    if(isNumber(i)){
       sum += parseInt( arr[i], 10 );
     }else{
       throw new Error('The array passed into accumulate() does not contain only numbers.')
@@ -446,75 +446,4 @@ function clear_editor(){
     $('.clearingEditor').css('display', 'block');
     $('.eraserAnimation2').css('display', 'none');
   }, 2000);
-}4
-
-function rainbow(){
-  var hexes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'B', 'C', 'D', 'E', 'F'];
-  function generateColor(){
-    color = '#';
-    for(var i=0;i<6;i++){
-      color += hexes[randInt(0, hexes.length-1)];
-    }
-    return(color);
-  }
-  var fonts = ['Arial', 'Arial Black', 'Arial Narrow', 'Arial Rounded RT Bold', 'Avant Garde', 'Calibri', 'Candara', 'Century Gothic', 'Franklin Gothic Medium', 'Geneva', 'Gill Sans', 'Helvetica', 'Impact', 'Lucida Grande', 'Optima', 'Segoe UI', 'Tahoma', 'Trebuchet MS', 'Verdana'];
-  setInterval(function(){
-    var fontPick = fonts[randInt(0, fonts.length)];
-    changeColor(generateColor(), generateColor());
-    changeFont(fontPick, randInt(1, 100) + 'px');
-  }, 1000);
-}
-
-function aesthetic(){
-  var string = prompt('Enter a string');
-  var newString = '';
-  for(var i=0;i<string.length;i++){
-    if(string[i] != ' '){
-      newString += string[i] + ' ';
-      print(newString);
-    }else{
-      newString += ' ';
-    }
-  }
-}
-
-function clock(){
-  setInterval(function(){
-    clear_console();
-    var now = new Date();
-    var hour = now.getHours(),
-    minutes = now.getMinutes(),
-    seconds = now.getSeconds(),
-    msec = now.getMilliseconds(),
-    mo = now.getMonth(),
-    dy = now.getDate(),
-    yr = now.getFullYear();
-    print(mo+1 + '/' + dy + '/' + yr);
-    print(hour + ":" + minutes + ":" + seconds + ":" + msec);
-  }, 1);
-}
-
-function oscillate(){
-  clear_console();
-  changeFont(null, '12px');
-  print(prompt('enter a string'));
-  var increasing = 1;
-  window.fontSize = 12;
-  setInterval(function(){
-    changeFont(null, fontSize + 'px');
-    if(increasing == 1){
-      if(fontSize < 70){
-        fontSize += 1;
-      }else{
-        increasing = 0;
-      }
-    }
-    if(increasing === 0){
-      if(fontSize > 1){
-        fontSize -= 1;
-      }else{
-        increasing = 1;
-      }
-    }
-  }, 10);
 }

@@ -46,14 +46,14 @@ include('navbar.php');
         <div class="view animated fadeInDown">
         <div class="full-bg-img flex-center">
             <div class="container">
-                <div class="row" style="text-align: center;">
+                <div class="row text-center">
                     <div class="col-md-4"></div>
-                    <div class="col-md-4 center">
-                        <div class="card" id="profile_card" style="width:100%; height:auto;">
-                            <img src="/images/planet.png" style="width:100%">
-                            <div style="background-color: #D3D3D3; border-radius: 10px; border-top-left-radius: 0; border-top-right-radius: 0;">
-                                <h1 style="margin: 2%;" class="h1-responsive">User Name</h1>
-                                <p class="title" style="margin-bottom: 2%;"><b>Name</b></p>
+                    <div class="col-md-4 text-center">
+                        <div class="card" id="profile_card">
+                            <img src="/images/planet.png" id="profile_pic">
+                            <div id="profile_text" class="bottom_margin">
+                                <h1 class="h1-responsive">User Name</h1>
+                                <p class="title bottom_margin"><b>Name</b></p>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ include('navbar.php');
     <!--Main Navigation-->
 
     <!--Main layout-->
-    <main>
+    <main class="bottom_margin">
     <div class="container">
         <div class="row">
         <div class="col-md-3">
@@ -74,7 +74,7 @@ include('navbar.php');
 
         <!--Section: About-->
         <section id="about" class="text-center">
-            <!--This is just to test what the div will look like with a bunch of text. It's just filler latin-->
+            <!--This is just to test what the div will look like with a bunch of text.-->
             <p>Lorem ipsum dolor sit amet, ea graece ridens dissentias est, eum exerci blandit tincidunt an, cu enim feugiat nec. Pri et everti dolores pericula, per altera urbanitas cu, amet philosophia cu has. Et quo admodum consetetur concludaturque, vis eu solum neglegentur. Sit sumo qualisque cu, ex ius legimus invenire voluptaria, iuvaret invenire intellegat sed cu. Vim an quas torquatos.
 
 No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scripserit. Id has mollis prompta, eum te</p>
@@ -95,10 +95,10 @@ No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scrips
                 <!--First columnn-->
                 <div class="col-md-6">
                     <!--Card-->
-                    <div class="card" id="card1" style="margin-bottom: 10%;">
+                    <div class="card" id="card1 bottom_margin">
 
                         <!--Card image-->
-                        <div class="view overlay hm-white-slight" style="background: none; height: auto;" id="card1-image">
+                        <div class="view overlay hm-white-slight" id="card-image">
                             <img src="http://media.istockphoto.com/photos/young-programmers-celebtating-successful-project-picture-id649833448" class="img-fluid" alt="">
                             <a>
                                 <div class="mask"></div>
@@ -112,19 +112,9 @@ No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scrips
                             <h4 class="card-title" style="margin-top: 5%;">Project Title</h4>
                             <hr>
                             <div class="row">
-                                <div class="col-sm-8">
+                                <div class="col-sm bottom_margin">
                                     <!--Text-->
-                                    <p class="card-text">Project Description</p>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="row">
-                                        <div class="fa fa-heart" style="color: blue; margin-top: 7%; margin-right: 10%;"></div>
-                                        <p>: 0</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="fa fa-comment" style="color: black; margin-top: 7%; margin-right: 10%;"></div>
-                                        <p>: 0</p>
-                                    </div>
+                                    <p class="card-text text-center">Project Description</p>
                                 </div>
                             </div>
                         </div>
@@ -138,11 +128,11 @@ No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scrips
                 <!--Second columnn-->
                 <div class="col-md-6">
                     <!--Card-->
-                    <div class="card" style="margin-bottom: 10%;">
+                    <div class="card bottom_margin">
 
                         <!--Card image-->
-                        <div class="view overlay hm-white-slight" style="background: none; height: auto;">
-                            <img src="http://media.istockphoto.com/photos/young-programmers-celebtating-successful-project-picture-id649833448" class="img-fluid" alt="">
+                        <div class="view overlay hm-white-slight" id="card-image">
+                            <img src="http://media.istockphoto.com/photos/young-programmers-celebtating-successful-project-picture-id649833448" class="img-fluid">
                             <a>
                                 <div class="mask"></div>
                             </a>
@@ -152,22 +142,12 @@ No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scrips
                         <!--Card content-->
                         <div class="card-block text-center">
                             <!--Title-->
-                            <h4 class="card-title"style="margin-top: 5%;">Project Title</h4>
+                            <h4 class="card-title">Project Title</h4>
                             <hr>
                             <div class="row">
-                                <div class="col-sm-8">
+                                <div class="col-sm bottom_margin">
                                     <!--Text-->
-                                    <p class="card-text">Project Description</p>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="row">
-                                        <div class="fa fa-heart" style="color: blue; margin-top: 7%; margin-right: 10%;"></div>
-                                        <p>: 0</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="fa fa-comment" style="color: black; margin-top: 7%; margin-right: 10%;"></div>
-                                        <p>: 0</p>
-                                    </div>
+                                    <p class="card-text text-center">Project Description</p>
                                 </div>
                             </div>
                         </div>
@@ -182,11 +162,11 @@ No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scrips
                 <!--Third columnn-->
                 <div class="col-md-6">
                     <!--Card-->
-                    <div class="card" style="margin-bottom: 10%;">
+                    <div class="card bottom_margin">
 
                         <!--Card image-->
                         <div class="view overlay hm-white-slight" style="background: none; height: auto;">
-                            <img src="http://media.istockphoto.com/photos/young-programmers-celebtating-successful-project-picture-id649833448" class="img-fluid" alt="">
+                            <img src="http://media.istockphoto.com/photos/young-programmers-celebtating-successful-project-picture-id649833448" class="img-fluid">
                             <a>
                                 <div class="mask"></div>
                             </a>
@@ -196,22 +176,12 @@ No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scrips
                         <!--Card content-->
                         <div class="card-block text-center">
                             <!--Title-->
-                            <h4 class="card-title" style="margin-top: 5%;">Project Title</h4>
+                            <h4 class="card-title">Project Title</h4>
                             <hr>
                             <div class="row">
-                                <div class="col-sm-8">
+                                <div class="col-sm bottom_margin">
                                     <!--Text-->
-                                    <p class="card-text">Project Description</p>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="row">
-                                        <div class="fa fa-heart" style="color: blue; margin-top: 7%; margin-right: 10%;"></div>
-                                        <p>: 0</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="fa fa-comment" style="color: black; margin-top: 7%; margin-right: 10%;"></div>
-                                        <p>: 0</p>
-                                    </div>
+                                    <p class="card-text text-center">Project Description</p>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +195,7 @@ No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scrips
                 <!--Fourth columnn-->
                 <div class="col-md-6">
                     <!--Card-->
-                    <div class="card hoverable" style="margin-bottom: 10%;">
+                    <div class="card hoverable">
 
                         <!--Card image-->
                         <div class="view overlay hm-white-slight" style="background: none; height: auto;">
@@ -239,7 +209,7 @@ No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scrips
                         <!--Card content-->
                         <div class="card-block text-center">
                             <!--Title-->
-                            <h4 class="card-title" style="margin-top: 5%;">Project Title</h4>
+                            <h4 class="card-title">Project Title</h4>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-8">
@@ -268,25 +238,8 @@ No graecis persecuti concludaturque eum, novum dolor id pri. Ne per assum scrips
                 </div>
             </div>
         </section>
-        <!--/Section: Best features-->
-
-        <!--Section: Contact-->
-        <section style="margin-top: 5%;">
-            
-        </section>
-        <!--Section: Contact-->
 
     </div>
     </main>
-    <!--Main layout-->
-
-    <!--Footer-->
-    <footer>
-
-    </footer>
-    <!--Footer-->
-    <!-- Start your project here-->
-    <!-- /Start your project here-->
 </body>
-
 </html>

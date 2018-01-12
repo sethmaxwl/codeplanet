@@ -4,8 +4,8 @@
 	font-family: inconsolata, monospace;
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
-	background: #000000;
-	color: #FFFFFF;
+	background: #1D1F21;
+	color: #C5C8C6;
 }
 .cm-s-all-hallow-eve .CodeMirror-lines {
 	padding: 8px 0;
@@ -13,32 +13,33 @@
 .cm-s-all-hallow-eve .CodeMirror-gutters {
 	box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
-	background-color: #000000;
+	background-color: #1D1F21;
+	color: #C5C8C6;
 	padding-right: 10px;
 	z-index: 3;
 	border: none;
 }
 .cm-s-all-hallow-eve div.CodeMirror-cursor {
-	border-left: 1.5px solid #FFFFFF;
+	border-left: 1.5px solid #AEAFAD;
 }
 .cm-s-all-hallow-eve .CodeMirror-activeline-background {
-	background: #2d002d;
+	background: #373B41;
 }
 .cm-s-all-hallow-eve .CodeMirror-selected {
-	background: #73597EE0;
+	background: #73597E;
 }
 .cm-s-all-hallow-eve .cm-comment {
-	color: #c144ff;
+	color: #969896;
 }
 .cm-s-all-hallow-eve .cm-keyword {
-	color: #00BFFF;
+	color: #8ABEB7;
 }
 .cm-s-all-hallow-eve .cm-def {
 	font-style: italic;
-	color: #00EE00;
+	color: #81A2BE;
 }
 .cm-s-all-hallow-eve .cm-string {
-	color: #66CC33;
+	color: #B5BD68;
 }
 .cm-s-all-hallow-eve .cm-variable-2 {
 	color: #00EE00;
@@ -50,13 +51,13 @@
 	color: #C83730;
 }
 .cm-s-all-hallow-eve .cm-number {
-	color: #C83730;
+	color: #DE935F;
 }
 .cm-s-all-hallow-eve .cm-operator {
 	color: #CC7833;
 }
 .cm-s-all-hallow-eve .CodeMirror-linenumber {
-	color: #c144ff;
+	color: #AEAFAD;
 }
 
 .CodeMirror-scroll {

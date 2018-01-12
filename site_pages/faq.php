@@ -1,6 +1,8 @@
+<?php 
+    include('navbar_unauthorized.html'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include('navbar.php'); ?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -80,7 +82,7 @@
             <button class="accordion">What is codeplanet?</button>
             <div class="panel">
               <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible; margin-top: 1%;"><b>Q. What is codeplanet?</b></h4>
-              <p>A. The codeplanet platform is designed to allow users to develop JavaScript programs and share them with a community of people. This community-based approach to programming allows users to collect value feedback from others in the form of upvotes and comments, helping programmers to learn from each other and enhance their programming skills.</p>
+              <p>A. The codeplanet platform is designed to allow users to develop JavaScript programs and share them with a community of people. This community-based approach to programming allows users to see techniques used by other programmers, helping them to learn from each other and enhance their programming skills.</p>
             </div>
               
             <button class="accordion">What makes codeplanet different from sites like JSFiddle or CodePen?</button>

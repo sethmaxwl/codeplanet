@@ -2,7 +2,7 @@
 <html lang="en">
     
 <?php 
-include('navbar.php');
+include('navbar_unauthorized.html');
 
 // if (!empty($_POST["inputEmail"])){
 //     $servername = "localhost";
@@ -70,28 +70,28 @@ include('navbar.php');
                 <div class="view">
                 <div class="full-bg-img flex-center">
                     <div class="col-sm-3">
-                    <div class="container animated slideInUp" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
+                    <div class="container animated slideInUp" id="login_stuff">
                         <form class="form-signin">
-                            <h2 class="form-signin-heading" style="text-align: center; font-size: 140%;">Please Sign In...</h2>
+                            <h2 class="form-signin-heading" id="signInCard">Please Sign In...</h2>
                             <label for="loginEmail" class="sr-only">Email address</label>
                             <input type="email" id="loginEmail" class="form-control" placeholder="Email address" required="" autofocus="">
                             <label for="loginPassword" class="sr-only">Password</label>
                             <input type="password" id="loginPassword" class="form-control" placeholder="Password" required="">
-                            <button class="btn btn-lg btn-success btn-block" type="submit" style="font-size: 12px;">Start Coding</button>
+                            <button class="btn btn-lg btn-success btn-block" type="submit" id="enter">Start Coding</button>
                         </form>
                     </div>
                 </div>
                 <div class="col-sm-1"></div>
                 <!--sign up-->
                 <div class="col-sm-3">
-                    <div class="container animated slideInUp" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
+                    <div class="container animated slideInUp" id="login_stuff">
                         <form class="form-signin">
-                            <h2 class="form-signin-heading" style="text-align: center; font-size: 140%;">...or Sign Up!</h2>
+                            <h2 class="form-signin-heading" id="signInCard">...or Sign Up!</h2>
                             <label for="inputEmail" class="sr-only">Email address</label>
                             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                            <button class="btn btn-lg btn-primary btn-block" type="submit" style="font-size: 12px;">Get Started</button>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" id="enter">Get Started</button>
                            
                         </form>
                     </div>

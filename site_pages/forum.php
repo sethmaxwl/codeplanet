@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
-    <?php include('navbar.php'); ?>
+  <?php 
+    include('navbar.php'); 
+  ?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,16 +31,6 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-    <style>
-    .boxTag{
-      background-color: #4717F6;
-      border-radius: 16px;
-      color: #FFFFFF;
-      padding: 5px;
-      width: 12%;
-      max-height: ;
-    }
-    </style>
     <script>
       $(window).load(function(){
         var cardWidth = $('.card').width();
@@ -45,7 +38,7 @@
       });
     </script>
   </head>
-  <body style="margin-top: 7%;">
+  <body class="margin5">
     <div class="card card-body">
       <h5 class="card-title"><div class="boxTag">JavaScript</div> Help with parsing</h5>
       <p class="card-text">Help me I cannot parse!</p>

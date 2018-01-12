@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <?php
-    include('navbar.php');
+<?php 
+    session_start();
+    include('navbar.html');
     //if(!isset($_SESSION['username'])){
     //header("Location:Login.php");}
   ?>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,18 +22,18 @@
     <link href="/project_resources/MDB-Free/css/style.css" rel="stylesheet">
     <link href="/project_resources/css/animate.css" rel="stylesheet">
   </head>
-  <body style="overflow-x: hidden;">
+  <body class="noOverflowX">
     <header class="animated fadeIn">
       <div class="container">
-            <div class="divider-new pt-5" style="margin-bottom: 0;">
-                <h2 class="h2-responsive wow" style="animation-name: none; visibility: visible;">Community Projects</h2>
+            <div class="divider-new pt-5">
+                <h2 class="h2-responsive wow editor_tag">Community Projects</h2>
             </div>
         </div>
-      <div class="row" style="margin-top: 5%; margin-left: 5%; margin-right: 5%;">
+      <div class="row" id="cards">
         <div class="col">
         <div class="card">
           <div class="card-header deep-orange lighten-1 white-text">Featured</div>
-          <div class="card-body" style="text-align: center;">
+          <div class="card-body text-center">
             <h4 class="card-title">Project Title</h4>
             <p class="card-text">Project Description</p>
             <a class="btn btn-deep-orange btn-sm">Open project</a>
@@ -42,7 +43,7 @@
          <div class="col">
         <div class="card">
           <div class="card-header purple lighten-1 white-text">Featured</div>
-          <div class="card-body" style="text-align: center;">
+          <div class="card-body text-center">
             <h4 class="card-title">Project Title</h4>
             <p class="card-text">Project Description</p>
             <a class="btn btn-purple btn-sm">Open project</a>
@@ -52,7 +53,7 @@
          <div class="col">
         <div class="card">
           <div class="card-header primary-color lighten-1 white-text">Featured</div>
-          <div class="card-body" style="text-align: center;">
+          <div class="card-body text-center">
             <h4 class="card-title">Project Title</h4>
             <p class="card-text">Project Description</p>
             <a class="btn btn-primary btn-sm">Open project</a>
@@ -62,7 +63,7 @@
          <div class="col">
         <div class="card">
           <div class="card-header success-color lighten-1 white-text">Featured</div>
-          <div class="card-body" style="text-align: center;">
+          <div class="card-body text-center">
             <h4 class="card-title">Project Title</h4>
             <p class="card-text">Project Description</p>
             <a class="btn btn-success btn-sm">Open project</a>
@@ -70,7 +71,7 @@
         </div>
         </div>
       </div>
-        <div style="margin-top: 5%;">
+        <div class="margin5">
           <ul class="pagination pg-purple pagination-lg justify-content-center">
             <!--Arrow left-->
             <li class="page-item">

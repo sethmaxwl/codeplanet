@@ -1,148 +1,80 @@
 <?php 
-      echo('signup_processing.php');
-require(dirname(_FILE_).'./site_pages/connect.php');
+  require(dirname(__FILE__).'/connect.php');
+    // session_start();
+    // $host = "127.0.0.1";
+    // $servername = "localhost";
+    // $username = "westv1387";
+    // $password = "";
+    // $dbname = "CodeTN";
+    // $port = 3306;
+
     
+  //   $conn = mysqli_connect($host, $username, $password, $dbname, $port);
+  //   if (mysqli_connect_errno())
+  // {
+  // echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  // }
+  //   echo('conn:');
+
     // set parameters and execute
-  $msg = "";
-  if(isset($_POST["submit"])){
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-     
-    $name = mysqli_real_escape_string($db, $name);
-    $email = mysqli_real_escape_string($db, $email);
-    $password = mysqli_real_escape_string($db, $password);
+  $msg = "nothing";
+  $username_error = "";
+  $name_error = "";
+  
+  if(isset($_POST["submitted"])) {
+    echo("I am here");
+    //$msg = "made it in";
+    $name = $_POST["inputName"];
+    $username = $_POST["inputEmail"];
+    $password = $_POST["inputPassword"];
+    
+    $name = mysqli_real_escape_string($db,$name);
+    $username = mysqli_real_escape_string($db,$username);
+    $password = mysqli_real_escape_string($db,$password);
     $password = md5($password);
     
-    $sql="SELECT email FROM User WHERE email='email'";
-    $result=mysqli_query($conn,$sql);
+    echo("Username: " . $username . " Password: " . $password . " Name: " . $name);
+    
+    echo("made it past assigning values.");
+     
+    // $name = htmlspecialchars($name);
+    // $email = htmlspecialchars($email);
+    // $password = htmlspecialchars($password);
+    // $password = md5($password);
+    
+    // $sql="SELECT email FROM User WHERE email='email'";
+    $sql="SELECT username FROM User WHERE username='$username'";
+    $result=mysqli_query($db,$sql);
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-    if(mysqli_num_rows($result)==1){
-      $msg="This email has been registered.";
-    } else {
-        $query = mysqli_query($conn, "INSERT INTO User (name, email, password) VALUES ('$name','$email','$password'");
+    if(mysqli_num_rows($result) == 1){
+      $msg = "Sorry, this email is registered. Please log in.";
+    }else{
+      $query = mysqli_query($db, "INSERT INTO User (name, username, password) VALUES ('$name','$username','$password')");
         if($query){
           $msg="You are now registered!";
-        }
+          //header("Location:../site_pages/profile_user.php");
     }
+    // echo('result:');
+    // echo($result);
+    // echo('row');
+    // echo($row);
+
+    // if($result != null && mysqli_num_rows($result)==1){
+    //   $msg="This email has been registered.";
+    // } else {
+    //     echo('down here');
+    //     $query = mysqli_query($conn, "INSERT INTO User (name, email, password) VALUES ('$name','$email','$password')");
+    //           echo('query:');
+    //           echo($query);
+    //     if($query){
+    //       $msg="You are now registered!";
+    //     }
+    // }
+  }
   }
   
-
-
-
-
-
-// // Define variables and initialize with empty values
-// $username = $password = "";
-// $username_err = $password_err = "";
-// // Processing form data when form is submitted
-// if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-//     // Validate username
-//     if(empty(trim($_POST["username"]))){
-//         $username_err = "Please enter a username.";
-//     } else{
-//         // Prepare a select statement
-//         $sql = "SELECT id FROM users WHERE username = ?";
-        
-//         if($stmt = mysqli_prepare($link, $sql)){
-//             // Bind variables to the prepared statement as parameters
-//             mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
-//             // Set parameters
-//             $param_username = trim($_POST["username"]);
-            
-//             // Attempt to execute the prepared statement
-//             if(mysqli_stmt_execute($stmt)){
-//                 /* store result */
-//                 mysqli_stmt_store_result($stmt);
-                
-//                 if(mysqli_stmt_num_rows($stmt) == 1){
-//                     $username_err = "This username is already taken.";
-//                 } else{
-//                     $username = trim($_POST["username"]);
-//                 }
-//             } else{
-//                 echo "Oops! Something went wrong. Please try again later.";
-//             }
-//         }
-         
-//         // Close statement
-//         mysqli_stmt_close($stmt);
-//     }
-    
-//     // Validate password
-//     if(empty(trim($_POST['password']))){
-//         $password_err = "Please enter a password.";     
-//     } elseif(strlen(trim($_POST['password'])) < 6){
-//         $password_err = "Password must have atleast 6 characters.";
-//     } else{
-//         $password = trim($_POST['password']);
-//     }
-    
-//     // Validate confirm password
-//     if(empty(trim($_POST["confirm_password"]))){
-//         $confirm_password_err = 'Please confirm password.';     
-//     } else{
-//         $confirm_password = trim($_POST['confirm_password']);
-//         if($password != $confirm_password){
-//             $confirm_password_err = 'Password did not match.';
-//         }
-//     }
-    
-//  -   // Check input errors before inserting in database
-//     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
-        
-//         // Prepare an insert statement
-//         $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-         
-//         if($stmt = mysqli_prepare($link, $sql)){
-//             // Bind variables to the prepared statement as parameters
-//             mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
-            
-//             // Set parameters
-//             $param_username = $username;
-//             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            
-//             // Attempt to execute the prepared statement
-//             if(mysqli_stmt_execute($stmt)){
-//                 // Redirect to login page
-//                 header("location: login.php");
-//             } else{
-//                 echo "Something went wrong. Please try again later.";
-//             }
-//         }
-         
-//         // Close statement
-//         mysqli_stmt_close($stmt);
-//     }
-    
-//     // Close connection
-//     mysqli_close($link);
-// }
-
-
-
-
-  
-//   //if (!empty($_POST["inputEmail"])){
-//     $name = mysqli_real_escape_string($conn, $_POST["inputName"]);
-//     $username = mysqli_real_escape_string($conn, $_POST["inputEmail"]);
-//     $password =  mysqli_real_escape_string($conn, $_POST["inputPassword"]);
-//     //$options=["cost"=>10];
-//     //$pass = password_hash($_POST["inputPassword"], PASSWORD_BCRYPT, $options);
-//     //$query=mysql_query("INSERT INTO User (name,username,password) VALUES ($name, $username, $password)");
-//     // $sql = $conn->prepare("INSERT INTO User (name,username,password) VALUES (?,?,?)");
-//     // $sql->bind_param("sss",$name,$username,$pass);
-//     $query = "INSERT INTO User (name, username, password) VALUES ('$name', '$username', '$password')";
-//     if (!mysqli_query($conn, $query)){
-//       echo "Error" .mysqli_error($conn);
-//     } else {
-//       header ("Location: profile_user.php");
-//     }
-//      $sql->execute();
-//   }  
-//   $sql->close();
-//   $conn->close();
-
+  echo('You are now registered, redirecting...');
+  mysqli_close($db);
+  header("Location: ./community.php");
+  return;
 ?>
