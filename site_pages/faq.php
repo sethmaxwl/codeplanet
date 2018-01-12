@@ -18,7 +18,7 @@
     <!-- Your custom styles (optional) -->
     <link href="/project_resources/MDB-Free/css/style.css" rel="stylesheet">
     <link href="/project_resources/css/animate.css" rel="stylesheet">
-    <script>
+    <link href="/project_resources/faq_stuff.css" rel="stylesheet"><script>
       $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip(); 
       });
@@ -37,46 +37,7 @@
         <!DOCTYPE html>
         <html>
           <head>
-            <style>
-              button.accordion {
-                  background-color: #4717F6;
-                  color: #FFFFFF;
-                  cursor: pointer;
-                  padding: 18px;
-                  width: 100%;
-                  border: none;
-                  text-align: left;
-                  outline: none;
-                  font-size: 15px;
-                  font-family: Roboto,sans-serif;
-                  transition: 0.4s;
-              }
-              
-              button.accordion.active, button.accordion:hover {
-                  background-color: #2604A4;
-              }
-              
-              button.accordion:after {
-                  content: '\002B';
-                  color: #FFFFFF;
-                  font-weight: bold;
-                  float: right;
-                  margin-left: 5px;
-              }
-              
-              button.accordion.active:after {
-                  content: "\2212";
-              }
-              
-              div.panel {
-                  padding: 0 18px;
-                  background-color: #d3d3d3;
-                  max-height: 0;
-                  overflow: hidden;
-                  transition: max-height 0.2s ease-out;
-                  font-family: Roboto,sans-serif;
-              }
-            </style>
+            
           </head>
           <body>
             <button class="accordion">What is codeplanet?</button>
@@ -90,19 +51,33 @@
               <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible; margin-top: 1%;"><b>Q. What makes codeplanet different from sites like JSFiddle or CodePen?</b></h4>
                 <p>A. While codeplanet is similar to JSFiddle and CodePen, codeplanet provides a community in addition to its code execution capabilities. Instead of using codeplanet as a way to demonstrate projects on community sites such as Stack Exchange, codeplanet eliminates the middle man by providing users with an environment to actively develop JavaScript programs and get community feedback in the same application.</p>
             </div>
-              
+            
+            <button class="accordion">Why should I use codeplanet?</button>
+            <div class="panel">
+              <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible; margin-top: 1%;"><b>Q. Why should I use codeplanet?</b></h4>
+                <p>A. Codeplanet is not only an online IDE. It is also a community of programmers from different experience levels. The most appealing aspect of codeplanet is the universal nature of its use, as it can be used to teach beginning programmers the basics of computer science and as a playground for expert programmers to create sophisticated programs. The community model allows users to discover projects created by other users in order to advance their programming abilities. Codeplanet also is home to the codeplanet library, which was Furthermore, the codeplanet editor uses features commonly found in IDEs used in the professional programming industry to provide programmers with features they have grown used to in other environments.</p>
+            </div>
+            <button class="accordion">What is available in the custom codeplanet library?</button>
+            <div class="panel">
+              <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible; margin-top: 1%;"><b>Q. What is available in the custom codeplanet library?</b></h4>
+              <p>A. The codeplanet library contains many functions that help users interact with the console. Namely, the print, changeColor, and changeFont functions give the user complete control of the console's appearance and content. The library also contains functions that perform small, yet useful tasks that may come in handy for certain project. To name a few, there are random number generators, an accumulator, and checkers to determine if what is passed into the function is a certain data type. You can find all of the additional functions <a href="/site_pages/docs.php" id="realLink">here</a> along with a description and several examples to demonstrate their use. Alternatively, you can call the help function in the code editor and run the program to print out a list of all functions in the console.</p>
+            </div>
+            <button class="accordion">How do I run a program?</button>
+            <div class="panel">
+              <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible; margin-top: 1%;"><b>Q. How do I run a program?</b></h4>
+                <p>A. To run a program from the editor, click the green 'run' button. This will display the output of your program to the console. The purple button that says 'clear editor' will clear the editor after you confirm that you did not click the 'clear editor' button on accident. The 'clear console' clears the contents of the console, which will get rid of the log of outputs from each time the 'run' button was pressed. The 'save' button is only available to users who are logged in, and it asks you to name your program, which will be shared to the community page.</p>
+            </div>
             <button class="accordion">How can I output to the JavaScript console?</button>
             <div class="panel">
               <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible; margin-top: 1%;"><b>Q. How can I output to the JavaScript console?</b></h4>
-              <p>A. To get an output, you can use the print function. Just pass whatever you want to be the output and this will display it on the console. Be sure to look at the help function to view all of the pre-defined functions we have made for codeplanet.</p>
+              <p>A. To get an output, you can use the <a href="/site_pages/docs.php#letterSplit" id="realLink">print</a> function. Just pass in whatever you want to be the output and the print function will display it on the console. Be sure to look at the help function to view all of the pre-defined functions we have made for codeplanet.</p>
             </div>
-            
             <button class="accordion">What features does the JavaScript editor have?</button>
             <div class="panel">
              <h4 class="h4-responsive wow" style="animation-name: none; visibility: visible; margin-top: 1%;"><b>Q. What features does the JavaScript code editor have?</b></h4>
               <p>A. The code editor has a few features that are designed to improve user experience when writing programs.</p>
               <ul>
-                <li>If the editor is selected, CTRL-F (Windows) or CMD-F (Mac) will open a search box within the editor where you can search for words in your program. If your program is long enough to have a scrollbar on the side, each time a search term is found, there will be a purple highlight on the sidebar.</li>
+                <li>If the editor is selected, CTRL-F (Windows) or CMD-F (Mac) will open a search box within the editor where you can search for words in your program. If your program is long enough to have a scrollbar on the side, each time a search term is found, there will be a purple highlight on the sidebar. To stop a searching session, re-open the search box and delete the search term.</li>
                 <li>The code editor has an auto-bracket feature that adds a closing bracket to any open bracket.</li>
                 <li>Variable names are colored green and italicized whenever a variable is defined. For each use of the variable after its definition, the variable is colored green. This is designed to help users keep track of where variables are defined and used.</li>
                 <li>The active line has a purple highlight to make it easier to find where you are editing in the editor.</li>
@@ -143,172 +118,6 @@
         </div>
         <html class="">
           <head>
-            <style class="cp-pen-styles">
-            
-              a {
-                color: inherit;
-              }
-              
-              h1, h2, h3, h4 {
-                margin: 0;
-                margin-bottom: 10px;
-                margin-top: 10px;
-              }
-              
-              h1 {
-                font-size: 3em;
-              }
-              
-              .menu {
-                -webkit-filter: url("#shadowed-goo");
-                        filter: url("#shadowed-goo");
-              }
-              
-              .menu-item, .menu-open-button {
-                background: #A239CA;
-                border-radius: 100%;
-                width: 80px;
-                height: 80px;
-                margin-left: -40px;
-                position: absolute;
-                top: 20px;
-                color: white;
-                text-align: center;
-                line-height: 80px;
-                -webkit-transform: translate3d(0, 0, 0);
-                        transform: translate3d(0, 0, 0);
-                -webkit-transition: -webkit-transform ease-out 200ms;
-                transition: -webkit-transform ease-out 200ms;
-                transition: transform ease-out 200ms;
-                transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
-              }
-              
-              .menu-open {
-                display: none;
-              }
-              
-              .hamburger {
-                width: 25px;
-                height: 3px;
-                background: white;
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-left: -12.5px;
-                margin-top: -1.5px;
-                -webkit-transition: -webkit-transform 200ms;
-                transition: -webkit-transform 200ms;
-                transition: transform 200ms;
-                transition: transform 200ms, -webkit-transform 200ms;
-              }
-              
-              .hamburger-1 {
-                -webkit-transform: translate3d(0, -8px, 0);
-                        transform: translate3d(0, -8px, 0);
-              }
-              
-              .hamburger-2 {
-                -webkit-transform: translate3d(0, 0, 0);
-                        transform: translate3d(0, 0, 0);
-              }
-              
-              .hamburger-3 {
-                -webkit-transform: translate3d(0, 8px, 0);
-                        transform: translate3d(0, 8px, 0);
-              }
-              
-              .menu-open:checked + .menu-open-button .hamburger-1 {
-                -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
-                        transform: translate3d(0, 0, 0) rotate(45deg);
-              }
-              .menu-open:checked + .menu-open-button .hamburger-2 {
-                -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
-                        transform: translate3d(0, 0, 0) scale(0.1, 1);
-              }
-              .menu-open:checked + .menu-open-button .hamburger-3 {
-                -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
-                        transform: translate3d(0, 0, 0) rotate(-45deg);
-              }
-              
-              .menu {
-                position: absolute;
-                left: 50%;
-                margin-left: -80px;
-                padding-top: 20px;
-                padding-left: 80px;
-                width: 650px;
-                height: 150px;
-                box-sizing: border-box;
-                font-size: 20px;
-                text-align: left;
-              }
-              
-              .menu-item:hover {
-                background: white;
-                color: #A239CA;
-              }
-              .menu-item:nth-child(3) {
-                -webkit-transition-duration: 180ms;
-                        transition-duration: 180ms;
-              }
-              .menu-item:nth-child(4) {
-                -webkit-transition-duration: 180ms;
-                        transition-duration: 180ms;
-              }
-              .menu-item:nth-child(5) {
-                -webkit-transition-duration: 180ms;
-                        transition-duration: 180ms;
-              }
-              
-              .menu-open-button {
-                z-index: 2;
-                -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                -webkit-transition-duration: 400ms;
-                        transition-duration: 400ms;
-                -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
-                        transform: scale(1.1, 1.1) translate3d(0, 0, 0);
-                cursor: pointer;
-              }
-              
-              .menu-open-button:hover {
-                -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
-                        transform: scale(1.2, 1.2) translate3d(0, 0, 0);
-              }
-              
-              .menu-open:checked + .menu-open-button {
-                -webkit-transition-timing-function: linear;
-                        transition-timing-function: linear;
-                -webkit-transition-duration: 200ms;
-                        transition-duration: 200ms;
-                -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
-                        transform: scale(0.8, 0.8) translate3d(0, 0, 0);
-              }
-              
-              .menu-open:checked ~ .menu-item {
-                -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-                        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-              }
-              .menu-open:checked ~ .menu-item:nth-child(3) {
-                -webkit-transition-duration: 170ms;
-                        transition-duration: 170ms;
-                -webkit-transform: translate3d(80px, 0, 0);
-                        transform: translate3d(80px, 0, 0);
-              }
-              .menu-open:checked ~ .menu-item:nth-child(4) {
-                -webkit-transition-duration: 250ms;
-                        transition-duration: 250ms;
-                -webkit-transform: translate3d(160px, 0, 0);
-                        transform: translate3d(160px, 0, 0);
-              }
-              .menu-open:checked ~ .menu-item:nth-child(5) {
-                -webkit-transition-duration: 330ms;
-                        transition-duration: 330ms;
-                -webkit-transform: translate3d(240px, 0, 0);
-                        transform: translate3d(240px, 0, 0);
-              }
-            </style>
           </head>
           <body>
             <nav class="menu">

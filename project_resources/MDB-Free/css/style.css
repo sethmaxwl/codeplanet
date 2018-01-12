@@ -180,7 +180,7 @@ header,
     margin-top: 0;
 }
 #edit_body { 
-    padding-top: 30px;
+    padding-top: 45px;
     overflow-x:hidden; 
     overflow-y: hidden; 
     font-size: 1rem;
@@ -198,8 +198,8 @@ header,
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,Lucida Console,monospace;
     font-size:12px;
+    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
     background-color: #000000;
     color: #00ff00;
     resize: none;
@@ -275,6 +275,7 @@ header,
     margin: auto;
     margin-top: 25px;
     height: auto;
+    text-align: center;
 }
 #run_btn,
 #clear1_btn,
@@ -466,7 +467,28 @@ header,
 pre{
     margin-left: 5%;
     margin-right: 5%;
-    background-color: #eee;
+    background-color: #cecece;
     display: block;
     padding: 20px;
+}
+
+.modal-content{
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    border-radius: 10px !important;
+}
+.modal-header{
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+}
+
+.tooltip-wrapper .btn[disabled] {
+  pointer-events: none;
+}
+
+.tooltip-wrapper.disabled {
+  cursor: not-allowed;
+}
+.bigger{
+    font-size: 20px;
 }

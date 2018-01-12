@@ -447,3 +447,11 @@ function clear_editor(){
     $('.eraserAnimation2').css('display', 'none');
   }, 2000);
 }
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+
+$(function() {
+    $('.tooltip-wrapper').tooltip({position: "bottom"});
+});

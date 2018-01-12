@@ -8,17 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>codeplanet</title>
-    <link rel="icon" href="/images/planet.ico" type="image/x-icon">
+    <link rel="icon" href="../images/planet.ico" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="/project_resources/MDB-Free/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../project_resources/MDB-Free/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="/project_resources/MDB-Free/css/mdb.min.css" rel="stylesheet">
+    <link href="../project_resources/MDB-Free/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="/project_resources/MDB-Free/css/style.css" rel="stylesheet">
-    <link href="/project_resources/css/animate.css" rel="stylesheet">
-    <link href="/project_resources/planet_spin.css" rel="stylesheet">
+    <link href="../project_resources/MDB-Free/css/style.css" rel="stylesheet">
+    <link href="../project_resources/css/animate.css" rel="stylesheet">
+    <link href="../project_resources/planet_spin.css" rel="stylesheet">
 </head>
 <body>
     <!--Main Navigation-->
@@ -40,10 +40,10 @@
                         </li>
                         <!--codeplanet title-->
                         <li>
-                            <h2 class="h2-responsive">codeplanet</h1>
+                            <h2 class="h2-responsive" id="title">codeplanet</h1>
                         </li>
                         <li>
-                            <p>the programming social media platform</p>
+                            <p>Programming for the Planet</p>
                         </li>
                         <li>
                             <!--Sign up button-->

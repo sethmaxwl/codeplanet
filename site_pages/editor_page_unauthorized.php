@@ -1,6 +1,8 @@
 <?php 
-    include('navbar.html');
-    include('connect.php');
+    //if not logged in
+    include('navbar_unauthorized.html');
+    //if logged in
+    //include('navbar.html');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,27 +57,29 @@
         <script type="text/javascript" src="/project_resources/MDB-Free/js/mdb.min.js"></script>
         <!-- Code execution file-->
         <script type="text/javascript" src="/project_resources/sethLib.js"></script>
-        
         <script type="text/javascript">
-        $(document).ready(function(){
-            $('#save_btn').on('click', function() {
-                var textData = $('#codesnippet_editable').serialize();
-                $.ajax({type: "POST",
-                url: "project_save.php",
-                data: { submitted: true, inputText: textData},
-            success:function(result){
-                 window.location.replace("project_save.php");
-    }});
+            $(document).ready(function(){
+                setTimeout(function(){
+                    $("#modalNotLoggedIn").modal('show');
+                }, 5000);
             });
-        });
+            // Get the modal
+            var modal = document.getElementById('#modalNotLoggedIn');
+            // When the user clicks anywhere outside of the modal, close it
+            $(document).click(function(event) { 
+                if(!$(event.target).closest('#modalNotLoggedIn').length) {
+                    if($('#modalNotLoggedIn').is(":visible")) {
+                        $('#modalNotLoggedIn').hide();
+                    }
+                }        
+            });
         </script>
-        
     </head>
     <body id="edit_body">
         <div class="row animated fadeIn" id="edit_content">
             <div class="col">
                 <!--Code editor-->
-                    <textarea name="codesnippet_editable" id="codesnippet_editable">//Call the help function for a list of pre-defined functions</textarea>s
+                <textarea name="codesnippet_editable" id="codesnippet_editable">//Call the help function for a list of pre-defined functions</textarea>
             </div>
 <!--Container for result textarea and buttons-->
             <div class="col" id="editor_col">
@@ -84,12 +88,11 @@
                 </div>
                 <textarea rows="4" cols="25" id="result" onkeydown="return false;" onClick="return false;"></textarea>
                 <div class="row" id="buttons">
-                    <div class="btn-group text-center" role="group">
+                    <div class="btn-group" role="group">
                         <button role="button" class="btn green btn-md" id="run_btn" onClick="run();"><span class="btnRunner"><i class='fa fa-arrow-circle-o-left' aria-hidden='true'></i> Run</span><span class="btnLoader"><i class='fa fa-cog fa-spin fa-fw' aria-hidden='true'></i></span></button>
                         <button role="button" class="btn deep-purple btn-md" id="clear1_btn" data-toggle="modal" data-target="#clear_modal"><span class="clearingEditor"><i class="fa fa-times" aria-hidden="true"></i> Clear Editor</span><span class="eraserAnimation2"><i class="fa fa-eraser faa-wrench animated" aria-hidden="true"></i></span></button>
                         <button role="button" class="btn deep-orange btn-md" id="clear2_btn" onClick="clear_console();"><span class="clearingConsole"><i class="fa fa-times" aria-hidden="true"></i> Clear Console</span><span class="eraserAnimation1"><i class="fa fa-eraser faa-wrench animated" aria-hidden="true"></i></span></button>
-                        <button role="button" class="btn deep-purple btn-md" id="save_btn"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button>
-
+                        <div class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="This feature is only available to users who are logged in"><button role="button" class="btn deep-purple btn-md disabled" id="save_btn" onClick="save_stuff();"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button></div>
                     </div>
                 </div>
             </div>
@@ -106,6 +109,28 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success"  onClick="clear_editor();" data-dismiss="modal">Clear Editor</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade left modal-scrolling" id="modalNotLoggedIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" aria-hidden="true">
+            <div class="modal-dialog modal-side modal-bottom-left modal-notify modal-info" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="heading">Not Logged In?</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="white-text">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="center text-center">
+                                        <p><strong>Log in or sign up to share your project with other users!</strong></p>
+                                        <a href="/site_pages/signup_form.html" id="login_btn"><button type="button" class="btn btn-block btn-primary btn-md waves-effect waves-light">Log in / Sign up</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

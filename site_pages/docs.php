@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>codeplanet</title>
+    <title>Docs - codeplanet</title>
     <link rel="icon" href="/images/planet.ico" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -35,7 +35,7 @@
         <div class="divider-new pt-5">
           <h2 class="h2-responsive wow fadeIn">Library Documentation</h2>
         </div>
-        <p>This is intended to be a more in-depth guide to demonstrate how the codeplanet library functions. This information is also available in the code editor by calling the help function.</p>
+        <p class="bigger text-center">This is intended to be a more in-depth guide to demonstrate how the codeplanet library functions. This information is also available in the code editor by calling the help function.</p>
         <div class="divider-new pt-5">
           <h3 class="h3-responsive wow fadeIn" id="editor_tag">Table of Contents</h3>
         </div>

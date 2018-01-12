@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Login - codeplanet</title>
+        <link rel="icon" href="/images/planet.ico" type="image/x-icon">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+        <!-- Bootstrap core CSS -->
+        <link href="/project_resources/MDB-Free/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="/project_resources/MDB-Free/css/mdb.min.css" rel="stylesheet">
+        <!-- Your custom styles (optional) -->
+        <link href="/project_resources/MDB-Free/css/style.css" rel="stylesheet">
+        <link href="/project_resources/css/animate.css" rel="stylesheet">
+        <link rel="import" href="navbar.html">
+</head>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #342B46;">
+    <a class="navbar-brand" href="main.php"><img src="../images/mdearth.png" style="width: 25px; height: auto; margin-right: 5%; vertical-align: middle;">codeplanet</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/site_pages/editor_page.php">Code Editor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/site_pages/community.php">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/site_pages/about.php">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/site_pages/faq.php">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/site_pages/docs.php">Docs</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link" href="/site_pages/logout.php">Logout<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>';
+
+<style>
+  body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+        
+  body::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: #777777;
+    border: 0px solid #ffffff;
+    border-radius: 50px;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: #535353;
+  }
+
+  body::-webkit-scrollbar-thumb:active {
+    background: #535353;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #cecece;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+
+  body::-webkit-scrollbar-track:hover {
+    background: #cecece;
+  }    
+
+  body::-webkit-scrollbar-track:active {
+    background: #cecece;
+  }
+
+  body::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+</style>
+<link rel="icon" href="/images/planet.ico" type="image/x-icon">
+        <header>
+                <div class="view">
+                    <div class="full-bg-img flex-center">
+<!--sign in-->
+                        <div class="col-sm-3">
+                            <div class="container animated slideInUp" id="login_stuff" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
+                                <form class="form-signin" id="login_form" method="POST" action="login_processing.php">
+                                    <h2 class="form-signin-heading" id="signInCard">Please Sign In...</h2>
+                                    
+                                    <label for="loginEmail" class="sr-only">Email address</label>
+                                    <input type="email" id="loginEmail" name = "loginEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                                    
+                                    <label for="loginPassword" class="sr-only">Password</label>
+                                    <input type="password" id="loginPassword" name = "loginPassword" class="form-control" placeholder="Password" required="">
+                                    
+                                    <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" id="enter">Start Coding</button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-1"></div>
+    <!--sign up-->
+                        <div class="col-sm-3">
+                            <div class="container animated slideInUp" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
+                                <form class="form-signin" id="signup_form" method="POST" action="signup_processing.php">
+                                  <h2 class="form-signin-heading" style="text-align: center; font-size: 140%;">...or Sign Up!</h2>
+                                  <!--<input type="hidden" name="submitted" id="submitted" value="1"/>-->
+                                  <label for="inputName" class="sr-only">Name</label>
+                                  <input type="text" id="inputName" name="inputName" class="form control" placeholder="Name" required="" autofocus="">
+                                  
+                                  <label for="inputEmail" class="sr-only">Email address</label>
+                                  <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                                  
+                                  <label for="inputPassword" class="sr-only">Password</label>
+                                  <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required="">
+                                  
+                                  <button class="btn btn-lg btn-primary btn-block" type="submit" name="submitted" style="font-size: 12px;">Get Started</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
+        <!--Main Navigation-->
+    
+        <!--Main layout-->
+        <main>
+    
+        </main>
+        <!--Main layout-->
+    
+        <!--Footer-->
+        <footer>
+    
+        </footer>
+        <!--Footer-->
+        <!-- Start your project here-->
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="/project_resources/MDB-Free/js/jquery-3.1.1.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="/project_resources/MDB-Free/js/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="/project_resources/MDB-Free/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="/project_resources/MDB-Free/js/mdb.min.js"></script>
+    </body>
+</html>

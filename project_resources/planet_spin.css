@@ -14,6 +14,7 @@
 }
 body {
   background-color: #101010;
+  overflow: hidden;
 }
 .planet-image {
   width: 25vw;
@@ -22,7 +23,7 @@ body {
   max-height: 256px;
   border-radius: 50%;
   position: relative;
-  background: #303030 url('/images/night_sky.jpg') repeat-x center center;
+  background: #303030 url('/images/earth.png') repeat-x center center;
   background-size: cover;
   -webkit-animation: planet-rotation 15s linear infinite;
 }
