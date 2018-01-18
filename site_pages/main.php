@@ -1,5 +1,11 @@
 <?php 
-    include('navbar_unauthorized.html'); 
+    session_name ($_SESSION['sessionId']);
+    session_start();
+    if (isset($_SESSION["username"])){
+        include('navbar.html');
+    }else{
+        include('navbar_unauthorized.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +23,7 @@
     <link href="../project_resources/MDB-Free/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="../project_resources/MDB-Free/css/style.css" rel="stylesheet">
-    <link href="../project_resources/css/animate.css" rel="stylesheet">
+    <link href="../project_resources/animate.css" rel="stylesheet">
     <link href="../project_resources/planet_spin.css" rel="stylesheet">
 </head>
 <body>
@@ -47,7 +53,7 @@
                         </li>
                         <li>
                             <!--Sign up button-->
-                            <a href="/site_pages/login.php" class="btn purple btn-block">Sign up</a>
+                            <a href="/site_pages/editor_page_unauthorized.php" class="btn purple btn-block">Start Coding!</a>
                         </li>
                         </div>
                     </div>

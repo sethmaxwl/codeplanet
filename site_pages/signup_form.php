@@ -34,8 +34,8 @@
         <div class="col-sm-3">
           <div class="container animated slideInUp" style="background-color: #eee; padding: 20%; border: transparent; border-radius: 25px;">
             <form class="form-signin" id="signup_form" method="POST" action="signup_processing.php">
-              <h2 class="form-signin-heading" style="text-align: center; font-size: 140%;">...or Sign Up!</h2>
-              <!--<input type="hidden" name="submitted" id="submitted" value="1"/>-->
+              <h2 class="form-signin-heading" style="text-align: center; font-size: 140%;">Sign Up!</h2>
+              <!--enter name, username, and password, and submit-->
               <label for="inputName" class="sr-only">Name</label>
               <input type="text" id="inputName" name="inputName" class="form control" placeholder="Name" required="" autofocus="">
               <label for="inputEmail" class="sr-only">Email address</label>
@@ -57,23 +57,5 @@
         <script type="text/javascript" src="../project_resources/MDB-Free/js/bootstrap.min.js"></script>
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="../project_resources/MDB-Free/js/mdb.min.js"></script>
-        <script>
-              /*$("#signup_form").submit(function(event) {
-                  // prevent the form from submitting like usual
-                  event.preventDefault();
-      
-                  
-                      // $("#signup_form") becomes "this"
-                      var form = $(this).serialize();
-                      console.log(form);
-      
-                      // Send the form data using post
-                      $.post("signup_processing.php", form, function(data) {
-                          // data is returned or echoed from the php
-                          $("#result").html(data);
-                      });
-                
-              });*/
-      </script>
       </body>
 </html>

@@ -1,9 +1,36 @@
 <?php 
+    //require(dirname(__FILE__).'/connect.php');
+    session_name ($_SESSION['sessionId']);
     session_start();
-    include('navbar.html');
-    //if(!isset($_SESSION['username'])){
-    //header("Location:Login.php");}
-  ?>
+    if (isset($_SESSION['username'])){
+      include('navbar.html');
+    }else{
+      header("Location: ./login.php");
+    }
+    
+// ref. to http://php.net/manual/en/class.mysqli.php
+// ref. to  https://www.w3schools.com/php/php_ref_mysqli.asp
+// mysqli_close($db);
+//Create connection
+$con = mysqli_connect('localhost', 'westv1387','','CodeTN');
+// Check connection
+if (mysqli_connect_errno())
+  {
+  $rowcount="Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+else {
+  $rowcount="successful";
+  
+}
+
+// $sql="SELECT * FROM Projects";
+$result = mysqli_query($con,"SELECT * FROM Projects");
+$rowcount = mysqli_num_rows($result);
+// $row = mysqli_fetch_row($result); //single record only
+// ref. to  shudder 20150403 @ https://codereview.stackexchange.com/questions/85786/create-a-2d-array-from-sql-table
+$recs = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,8 +48,9 @@
     <!-- Your custom styles (optional) -->
     <link href="/project_resources/MDB-Free/css/style.css" rel="stylesheet">
     <link href="/project_resources/css/animate.css" rel="stylesheet">
+    
   </head>
-  <body class="noOverflowX">
+  <body class="noOverflowX" >
     <header class="animated fadeIn">
       <div class="container">
             <div class="divider-new pt-5">
@@ -34,9 +62,8 @@
         <div class="card">
           <div class="card-header deep-orange lighten-1 white-text">Featured</div>
           <div class="card-body text-center">
-            <h4 class="card-title">Project Title</h4>
-            <p class="card-text">Project Description</p>
-            <a class="btn btn-deep-orange btn-sm">Open project</a>
+            <h4 class="card-title">Project Title: <?php echo $recs[0]['title']; ?></h4>
+            <a href= "editor_page.php" class="btn btn-deep-orange btn-sm">Open project</a>
           </div>
         </div>
         </div>
@@ -44,9 +71,8 @@
         <div class="card">
           <div class="card-header purple lighten-1 white-text">Featured</div>
           <div class="card-body text-center">
-            <h4 class="card-title">Project Title</h4>
-            <p class="card-text">Project Description</p>
-            <a class="btn btn-purple btn-sm">Open project</a>
+            <h4 class="card-title">Project Title: <?php echo $recs[1]['title']; ?></h4>
+            <a href= "editor_page.php" class="btn btn-purple btn-sm">Open project</a>
           </div>
         </div>
         </div>
@@ -54,9 +80,8 @@
         <div class="card">
           <div class="card-header primary-color lighten-1 white-text">Featured</div>
           <div class="card-body text-center">
-            <h4 class="card-title">Project Title</h4>
-            <p class="card-text">Project Description</p>
-            <a class="btn btn-primary btn-sm">Open project</a>
+            <h4 class="card-title">Project Title: <?php echo $recs[2]['title']; ?></h4>
+            <a href= "editor_page.php" class="btn btn-primary btn-sm">Open project</a>
           </div>
         </div>
         </div>
@@ -64,9 +89,8 @@
         <div class="card">
           <div class="card-header success-color lighten-1 white-text">Featured</div>
           <div class="card-body text-center">
-            <h4 class="card-title">Project Title</h4>
-            <p class="card-text">Project Description</p>
-            <a class="btn btn-success btn-sm">Open project</a>
+            <h4 class="card-title">Project Title: <?php echo $recs[3]['title']; ?></h4>
+            <a href= "editor_page.php" class="btn btn-success btn-sm">Open project</a>
           </div>
         </div>
         </div>
@@ -101,3 +125,7 @@
 
   </body>
 </html>
+<?php 
+mysqli_free_result($result);
+mysqli_close($con);
+?>

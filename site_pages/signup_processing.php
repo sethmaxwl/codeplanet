@@ -31,7 +31,7 @@
       $query = mysqli_query($db, "INSERT INTO User (name, username, password) VALUES ('$name','$username','$password')");
         if($query){
           $msg="You are now registered!";
-          header("Location: ./community.php");
+          header("Location: ./editor_page.php");
         }
     }
   }

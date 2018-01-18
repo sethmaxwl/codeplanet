@@ -46,7 +46,7 @@
         <link href="/project_resources/MDB-Free/font/fa/fa-animations.css" rel="stylesheet">
         <!--Theme-->
         <link href="/project_resources/bespin.css" rel="stylesheet">
-        <link href="/project_resources/css/animate.css" rel="stylesheet">
+        <link href="/project_resources/animate.css" rel="stylesheet">
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Bootstrap tooltips -->

@@ -257,8 +257,9 @@ header,
 }
 #codesnippet_editable{
     min-width: 100%; 
-    max-width: 100%; 
-    overflow:hidden;
+    max-width: 100%;
+    
+    overflow:auto;
 }
 #editor_col{
     margin-right: 2%; 

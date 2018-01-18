@@ -1,5 +1,11 @@
 <?php 
-    include('navbar_unauthorized.html'); 
+    session_name ($_SESSION['sessionId']);
+    session_start();
+    if (isset($_SESSION['username'])){
+        include('navbar.html');
+    }else{
+        include('navbar_unauthorized.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

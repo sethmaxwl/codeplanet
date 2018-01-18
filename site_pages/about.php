@@ -1,6 +1,10 @@
 <?php 
     session_start();
-    include('navbar_unauthorized.html'); 
+    if (isset($_SESSION['username'])){
+        include('navbar.html');
+    }else{
+        include('navbar_unauthorized.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
