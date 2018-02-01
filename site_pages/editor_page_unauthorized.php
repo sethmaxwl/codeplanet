@@ -79,7 +79,106 @@
         <div class="row animated fadeIn" id="edit_content">
             <div class="col">
                 <!--Code editor-->
-                <textarea name="codesnippet_editable" id="codesnippet_editable">//Call the help function for a list of pre-defined functions</textarea>
+                <textarea name="codesnippet_editable" id="codesnippet_editable">/*
+DEMOS
+
+rainbows.js
+
+//Picks two random hex colors and sets the console text to one and the console background to the other each second
+var hexes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'B', 'C', 'D', 'E', 'F'];
+function generateColor(){
+  color = '#';
+  for(var i=0;i<6;i++){
+    color += hexes[randInt(0, hexes.length-1)];
+  }
+  return(color);
+}
+var fonts = ['Arial', 'Arial Black', 'Arial Narrow', 'Arial Rounded RT Bold', 'Avant Garde', 'Calibri', 'Candara', 'Century Gothic', 'Franklin Gothic Medium', 'Geneva', 'Gill Sans', 'Helvetica', 'Impact', 'Lucida Grande', 'Optima', 'Segoe UI', 'Tahoma', 'Trebuchet MS', 'Verdana'];
+setInterval(function(){
+  var fontPick = fonts[randInt(0, fonts.length)];
+  changeColor(generateColor(), generateColor());
+  changeFont(fontPick, randInt(1, 100) + 'px');
+}, 1000);
+
+aesthetic.js
+
+//Takes a string and prints it to the console one letter at a time with a space in front of each new letter
+//Ex. output for input='codeplanet'
+//$c
+//$c o
+//$c o d
+//$c o d e
+//$c o d e p
+//$c o d e p l
+//$c o d e p l a
+//$c o d e p l a n
+//$c o d e p l a n e
+//$c o d e p l a n e t
+var string = prompt('Enter a string');
+var newString = '';
+var hexes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'A', 'B', 'C', 'D', 'E', 'F'];
+function generateColor(){
+  color = '#';
+  for(var i=0;i<6;i++){
+    color += hexes[randInt(0, hexes.length-1)];
+  }
+  return(color);
+}
+
+for(var i=0;i<string.length;i++){
+  if(string[i] != ' '){
+    newString += string[i] + ' ';
+    print(newString);
+  }else{
+    newString += ' ';
+  }
+}
+changeColor(generateColor());
+
+clock.js
+
+//Prints a timestamp to the console that clears the previous stamp and updates itself every millisecond
+changeFont(null, "32px");
+setInterval(function(){
+  clear_console();
+  var now = new Date();
+  var hour = now.getHours(),
+  minutes = now.getMinutes(),
+  seconds = now.getSeconds(),
+  msec = now.getMilliseconds(),
+  mo = now.getMonth(),
+  dy = now.getDate(),
+  yr = now.getFullYear();
+  print(mo+1 + '/' + dy + '/' + yr);
+  print(hour + ":" + minutes + ":" + seconds + ":" + msec);
+}, 1);
+
+oscilation.js
+
+//Takes a string input and prints it to console while oscillating the text size from 1pt font to 70pt font
+clear_console();
+changeFont(null, '16px');
+print(prompt('enter a string'));
+var increasing = 1;
+window.fontSize = 12
+setInterval(function(){
+  changeFont(null, fontSize + 'px');
+  if(increasing == 1){
+    if(fontSize < 70){
+      fontSize += 1;
+    }else{
+      increasing = 0;
+    }
+  }
+  if(increasing === 0){
+    if(fontSize > 1){
+      fontSize -= 1;
+    }else{
+      increasing = 1;
+    }
+  }
+}, 10);
+*/</textarea>
             </div>
 <!--Container for result textarea and buttons-->
             <div class="col" id="editor_col">

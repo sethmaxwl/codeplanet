@@ -63,7 +63,7 @@ $recs = mysqli_fetch_all($result, MYSQLI_ASSOC);
           <div class="card-header deep-orange lighten-1 white-text">Featured</div>
           <div class="card-body text-center">
             <h4 class="card-title">Project Title: <?php echo $recs[0]['title']; ?></h4>
-            <a href= "editor_page.php" class="btn btn-deep-orange btn-sm">Open project</a>
+            <a href= "editor_page.1.php?p1=<?php echo $recs[0]['content']; ?>" class="btn btn-deep-orange btn-sm">Open project</a>
           </div>
         </div>
         </div>
@@ -72,7 +72,7 @@ $recs = mysqli_fetch_all($result, MYSQLI_ASSOC);
           <div class="card-header purple lighten-1 white-text">Featured</div>
           <div class="card-body text-center">
             <h4 class="card-title">Project Title: <?php echo $recs[1]['title']; ?></h4>
-            <a href= "editor_page.php" class="btn btn-purple btn-sm">Open project</a>
+            <a href= "editor_page.1.php?p1=<?php echo $recs[1]['content']; ?>" class="btn btn-purple btn-sm">Open project</a>
           </div>
         </div>
         </div>
@@ -81,7 +81,7 @@ $recs = mysqli_fetch_all($result, MYSQLI_ASSOC);
           <div class="card-header primary-color lighten-1 white-text">Featured</div>
           <div class="card-body text-center">
             <h4 class="card-title">Project Title: <?php echo $recs[2]['title']; ?></h4>
-            <a href= "editor_page.php" class="btn btn-primary btn-sm">Open project</a>
+            <a href= "editor_page.1.php?p1=<?php echo $recs[2]['content']; ?>" class="btn btn-primary btn-sm">Open project</a>
           </div>
         </div>
         </div>
@@ -90,7 +90,7 @@ $recs = mysqli_fetch_all($result, MYSQLI_ASSOC);
           <div class="card-header success-color lighten-1 white-text">Featured</div>
           <div class="card-body text-center">
             <h4 class="card-title">Project Title: <?php echo $recs[3]['title']; ?></h4>
-            <a href= "editor_page.php" class="btn btn-success btn-sm">Open project</a>
+            <a href= "editor_page.1.php?p1=<?php echo $recs[3]['content']; ?>" class="btn btn-success btn-sm">Open project</a>
           </div>
         </div>
         </div>

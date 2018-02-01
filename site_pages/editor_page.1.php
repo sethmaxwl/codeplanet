@@ -111,7 +111,15 @@ function addTitleBeforeSubmit() {
                         <!--So I fixed some of the formatting here and fixed a problem where the script you wrote would execute each time any of the buttons are clicked. I did it by making the form end right after the button. I'm not sure what we should do with the positioning of the save button since it needs to be here.-->
                         
                         <!--Code editor-->
-                        <textarea id="codesnippet_editable" name="codesnippet_editable">//Call the help function for a list of pre-defined functions</textarea>
+                        <textarea id="codesnippet_editable" name="codesnippet_editable">
+                        <?php 
+                            if (isset($_GET["p1"])) {
+                              echo $_GET["p1"];}
+                            else {
+                              echo "//Call the help function for a list of pre-defined functions";
+                            }
+                        ?>
+                        </textarea>
                         <button role="button" class="btn deep-purple btn-md" type="submit" name = "save_btn" id="save_btn" onClick="return addTitleBeforeSubmit();"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</span></button>
                     </form>
                 </div>
